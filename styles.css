@@ -21,19 +21,22 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #ffffff;
-    padding: 15px 30px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px 40px; /* Balanced left & right spacing */
+    /* background: #ffffff; */
+    border-radius: 16px;
+    margin: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     position: fixed;
-    width: 100%;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
 }
 
 .logo a {
     font-size: 24px;
     font-weight: bold;
-    color: #00796b;
+    color: black;
     text-decoration: none;
 }
 
@@ -48,7 +51,7 @@ body {
 }
 
 .reset:hover {
-    background: #005f56;
+    background: #5d8c87;
 }
 
 /* Sidebar Menu */
@@ -120,4 +123,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.timer {
+    font-size: 70px;
+    font-weight: bold;
 }
