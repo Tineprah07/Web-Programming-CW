@@ -1,0 +1,338 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body */
+body {
+    background: white;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px; /* Balanced left & right spacing */
+    /* background: #ffffff; */
+    border-radius: 16px;
+    margin: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.logo a {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+
+/* Sidebar Menu */
+.menu-box {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #222;
+    padding-top: 100px;
+    transition: 0.5s ease-in-out;
+    z-index: 1000;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Sidebar Top Icon */
+.menu-icon-top {
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    position: relative;  /* Allows fine-tuned positioning */
+    top: -20px;  /* Moves the icon up */
+    margin-bottom: 10px;  /* Reduces space below */
+}
+
+/* Adjusted Menu Icon */
+.menu-icon {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.menu-box.active {
+    left: 0;
+}
+
+.menu-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-box ul li {
+    padding: 15px;
+    border-bottom: 1px solid #444;
+}
+
+.menu-box ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    transition: background 0.3s;
+    padding: 15px;
+}
+
+.menu-box ul li a:hover {
+    background: #444;
+    padding-left: 20px;
+}
+
+/* Time Section */
+.time {
+    text-align: center;
+    padding: 120px 20px;
+    background: #e0f2f1;
+    max-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 100px; /* Increased margin-top to move the timer down */
+}
+
+.timer span {
+    display: block;
+    text-align: center;
+    width: 80px;
+}
+
+.timer-labels {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: -20px;
+}
+
+.timer-labels span {
+    display: block;
+    width: 70px;
+    text-align: center;
+    font-size: 0.7rem;
+}
+
+
+/* Updated Bottom Control Section with 3 buttons */
+.bottom-control {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: white;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Base Style for All Control Buttons */
+.control-button {
+    background: #00796b;
+    border: none;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.control-button:hover {
+    transform: scale(1.05);
+}
+
+/* Smaller Buttons (Reset & Record) */
+.control-button.small-button {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    background-color: #00897b;
+}
+
+.control-button.small-button:hover {
+    transform: scale(1.05);
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.button-label {
+    font-size: 0.75rem;
+    color: #555;
+    text-align: center;
+}
+
+/* Records Section */
+.records-section {
+    background: white;
+    max-width: 750px;
+    width: 90%;
+    margin: 20px auto 20px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+    position: relative; /* Ensure positioning context */
+    padding-bottom: 20px;
+}
+
+.records-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.records-header h2 {
+    font-size: 1.6rem;
+    color: #00796b;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.clear-btn {
+    background: none;
+    border: none;
+    color: #e53935;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.clear-btn:hover {
+    color: #b71c1c;
+}
+
+/* Header above records */
+.posi-time-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-weight: 600;
+    color: #666;
+    background: #f1f1f1;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.record-position-title {
+    flex: 1;
+    text-align: left;
+}
+
+.record-time-title {
+    flex: 1;
+    text-align: right;
+}
+
+.records-scroll-container {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 10px 15px;
+    background: #f9f9f9;
+}
+
+.record-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.record-row {
+    display: flex;
+    justify-content: space-between;
+    background: #ffffff;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    font-size: 1rem;
+}
+
+.record-row:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.record-position {
+    font-weight: 600;
+    color: #333;
+}
+
+.record-time {
+    font-family: 'Courier New', Courier, monospace;
+    color: #555;
+}
+
+.submit-btn {
+    margin: 25px auto 0;
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    padding: 14px;
+    background: #00796b;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #005f56;
+}
