@@ -1,3 +1,6 @@
+// This function is used to toggle the menu box and the overlay
+// when the menu icon is clicked
+// and to close the menu box when clicking outside of it
 document.addEventListener("DOMContentLoaded", function () {
     const menuBtn = document.querySelector("#menu-icon");
     const menuBox = document.querySelector("#menu-box");
@@ -17,4 +20,14 @@ document.addEventListener("DOMContentLoaded", function () {
             body.classList.remove("overlay-active");
         }
     });
+});
+
+// This function is used to toggle the play/pause button icon
+const playPauseBtn = document.querySelector("#playPause");
+let isRunning = false;
+
+playPauseBtn.addEventListener("click", () => {
+    isRunning = !isRunning;
+    const icon = playPauseBtn.querySelector("i");
+    icon.className = isRunning ? "fas fa-pause" : "fas fa-play";
 });
