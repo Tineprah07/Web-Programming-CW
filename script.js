@@ -31,3 +31,6 @@ playPauseBtn.addEventListener("click", () => {
     const icon = playPauseBtn.querySelector("i");
     icon.className = isRunning ? "fas fa-pause" : "fas fa-play";
 });
+
+
+
