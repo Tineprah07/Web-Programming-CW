@@ -54,9 +54,27 @@
 
     <!-- Record Section -->
     <section class="records-section">
-
-    </section>
+        <div class="records-header">
+            <h2><i class="fas fa-list-ol"></i> Race Records</h2>
+            <button class="clear-btn" id="clearRecords"><i class="fas fa-trash"></i> Clear</button>
+        </div>
     
+        <!-- Record List Header -->
+        <div class="posi-time-header">
+            <span class="record-position-title">Position</span>
+            <span class="record-time-title">Time</span>
+        </div>
+    
+        <!-- Scrollable Record List -->
+        <div class="records-scroll-container" id="recordsContainer">
+            <div class="record-list" id="recordList">
+                <!-- Dynamic Records Appear Here -->
+            </div>
+        </div>
+    
+        <button class="submit-btn">Submit</button>
+    </section>
+      
 
     <!-- Bottom Control Section -->
     <section>
@@ -84,8 +102,6 @@
         </div>
           
     </section>
-
-
 
 </body>
 </html>

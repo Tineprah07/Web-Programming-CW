@@ -11,7 +11,7 @@
 
 /* Body */
 body {
-    background: #f0f2f5;
+    background: white;
     color: #333;
     overflow-x: hidden;
 }
@@ -105,7 +105,7 @@ body {
     text-align: center;
     padding: 120px 20px;
     background: #e0f2f1;
-    min-height: 40vh;
+    max-height: 30vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -113,7 +113,7 @@ body {
 }
 
 .timer {
-    font-size: 50px;
+    font-size: 60px;
     font-weight: bold;
     margin-bottom: 20px;
     display: flex;
@@ -121,17 +121,7 @@ body {
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
-    margin-top: 50px;
-}
-
-.timer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    font-size: 60px;
-    font-weight: bold;
-    margin-top: 50px;
+    margin-top: 100px; /* Increased margin-top to move the timer down */
 }
 
 .timer span {
@@ -218,3 +208,131 @@ body {
     text-align: center;
 }
 
+/* Records Section */
+.records-section {
+    background: white;
+    max-width: 750px;
+    width: 90%;
+    margin: 20px auto 20px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+    position: relative; /* Ensure positioning context */
+    padding-bottom: 20px;
+}
+
+.records-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.records-header h2 {
+    font-size: 1.6rem;
+    color: #00796b;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.clear-btn {
+    background: none;
+    border: none;
+    color: #e53935;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.clear-btn:hover {
+    color: #b71c1c;
+}
+
+/* Header above records */
+.posi-time-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-weight: 600;
+    color: #666;
+    background: #f1f1f1;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.record-position-title {
+    flex: 1;
+    text-align: left;
+}
+
+.record-time-title {
+    flex: 1;
+    text-align: right;
+}
+
+.records-scroll-container {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 10px 15px;
+    background: #f9f9f9;
+}
+
+.record-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.record-row {
+    display: flex;
+    justify-content: space-between;
+    background: #ffffff;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    font-size: 1rem;
+}
+
+.record-row:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.record-position {
+    font-weight: 600;
+    color: #333;
+}
+
+.record-time {
+    font-family: 'Courier New', Courier, monospace;
+    color: #555;
+}
+
+.submit-btn {
+    margin: 25px auto 0;
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    padding: 14px;
+    background: #00796b;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #005f56;
+}

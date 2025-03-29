@@ -33,4 +33,3 @@ playPauseBtn.addEventListener("click", () => {
 });
 
 
-
