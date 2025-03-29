@@ -231,7 +231,7 @@ body {
 }
 
 .records-header h2 {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     color: #00796b;
     display: flex;
     align-items: center;
@@ -282,7 +282,7 @@ body {
     overflow-y: auto;
     border: 1px solid #eee;
     border-radius: 12px;
-    padding: 10px 15px;
+    padding: 20px 15px;
     background: #f9f9f9;
 }
 
@@ -322,7 +322,7 @@ body {
     margin: 25px auto 0;
     display: block;
     width: 100%;
-    max-width: 300px;
+    max-width: 200px;
     padding: 14px;
     background: #00796b;
     color: white;
