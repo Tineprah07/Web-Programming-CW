@@ -34,7 +34,7 @@ body {
 }
 
 .logo a {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     color: black;
     text-decoration: none;
@@ -126,6 +126,45 @@ body {
 }
 
 .timer {
-    font-size: 70px;
+    font-size: 50px;
     font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 50px;
 }
+
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    font-size: 60px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.timer span {
+    display: block;
+    text-align: center;
+    width: 80px;
+}
+
+.timer-labels {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: -20px;
+}
+
+.timer-labels span {
+    display: block;
+    width: 70px;
+    text-align: center;
+    font-size: 0.7rem;
+}
+
+
