@@ -33,3 +33,40 @@ playPauseBtn.addEventListener("click", () => {
 });
 
 
+
+function addRecord(position, time) {
+    const recordList = document.getElementById('recordList');
+    const record = document.createElement('div');
+    record.classList.add('record-row');
+
+    record.innerHTML = `
+        <div class="record-position">#${position}</div>
+        <div class="record-time">${time}</div>
+    `;
+    recordList.appendChild(record);
+}
+
+// Example usage
+addRecord(1, "00:34:12:45");
+addRecord(2, "00:35:50:22");
+addRecord(3, "00:35:50:22");
+addRecord(1, "00:34:12:45");
+addRecord(2, "00:35:50:22");
+addRecord(3, "00:35:50:22");
+addRecord(1, "00:34:12:45");
+addRecord(2, "00:35:50:22");
+addRecord(3, "00:35:50:22");
+addRecord(1, "00:34:12:45");
+addRecord(2, "00:35:50:22");
+addRecord(3, "00:35:50:22");
+addRecord(1, "00:34:12:45");
+addRecord(2, "00:35:50:22");
+addRecord(3, "00:35:50:22");
+addRecord(1, "00:34:12:45");
+addRecord(2, "00:35:50:22");
+addRecord(3, "00:35:50:22");
+addRecord(1, "00:34:12:45");
+addRecord(2, "00:35:50:22");
+addRecord(3, "00:35:50:22");
+addRecord(1, "00:34:12:45");
+
