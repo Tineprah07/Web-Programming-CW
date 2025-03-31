@@ -22,14 +22,17 @@ document.addEventListener("click", function (event) {
 
 
 // TIMER LOGIC
+// Initialize the timer
 const timerDisplay = document.querySelector("#timer");
 let startTime, updatedTime, difference, tInterval;
 let isRunning = false;
 
+// Set up the timer display
 function formatTime(num) {
     return num < 10 ? "0" + num : num;
 }
 
+// Function to update the timer display
 function updateTimer() {
     updatedTime = new Date().getTime();
     difference = updatedTime - startTime;
@@ -47,16 +50,19 @@ function updateTimer() {
     `;
 }
 
+// Function to start the timer
 function startTimer() {
     startTime = new Date().getTime() - (difference || 0);
     tInterval = setInterval(updateTimer, 10);
 }
 
+// Function to pause the timer
 function pauseTimer() {
     clearInterval(tInterval);
 }
 
 // PLAY/PAUSE BUTTON
+// This button toggles between play and pause
 const playPauseBtn = document.querySelector("#playPause");
 playPauseBtn.addEventListener("click", () => {
     isRunning = !isRunning;
@@ -87,6 +93,8 @@ let position = 1;
 
 recordBtn.addEventListener("click", () => {
     if (!difference) return;
+
+    // Create a new record row
     const newRow = document.createElement("div");
     newRow.classList.add("record-row");
     newRow.innerHTML = `
@@ -94,6 +102,10 @@ recordBtn.addEventListener("click", () => {
         <div>${timerDisplay.textContent}</div>
     `;
     recordList.appendChild(newRow);
+
+    // Automatically scroll to the bottom of the record list
+    newRow.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
     position++;
 });
 
