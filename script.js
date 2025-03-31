@@ -1,71 +1,111 @@
-// This function is used to toggle the menu box and the overlay
-// when the menu icon is clicked
-// and to close the menu box when clicking outside of it
-document.addEventListener("DOMContentLoaded", function () {
-    const menuBtn = document.querySelector("#menu-icon");
-    const menuBox = document.querySelector("#menu-box");
-    const body = document.querySelector("body");
+// script.js
 
-    menuBtn.addEventListener("click", function (event) {
-        event.stopPropagation();
-        menuBox.classList.toggle("active");
-        menuBtn.classList.toggle("pushed");
-        body.classList.toggle("overlay-active");
-    });
+// SIDEBAR TOGGLE
+const menuBtn = document.querySelector("#menu-icon");
+const menuBox = document.querySelector("#menu-box");
+const body = document.querySelector("body");
 
-    document.addEventListener("click", function (event) {
-        if (!menuBox.contains(event.target) && !menuBtn.contains(event.target)) {
-            menuBox.classList.remove("active");
-            menuBtn.classList.remove("pushed");
-            body.classList.remove("overlay-active");
-        }
-    });
+menuBtn.addEventListener("click", function (event) {
+    event.stopPropagation();
+    menuBox.classList.toggle("active");
+    menuBtn.classList.toggle("pushed");
+    body.classList.toggle("overlay-active");
 });
 
-// This function is used to toggle the play/pause button icon
-const playPauseBtn = document.querySelector("#playPause");
+document.addEventListener("click", function (event) {
+    if (!menuBox.contains(event.target) && !menuBtn.contains(event.target)) {
+        menuBox.classList.remove("active");
+        menuBtn.classList.remove("pushed");
+        body.classList.remove("overlay-active");
+    }
+});
+
+
+// TIMER LOGIC
+const timerDisplay = document.querySelector("#timer");
+let startTime, updatedTime, difference, tInterval;
 let isRunning = false;
 
+function formatTime(num) {
+    return num < 10 ? "0" + num : num;
+}
+
+function updateTimer() {
+    updatedTime = new Date().getTime();
+    difference = updatedTime - startTime;
+
+    let hours = Math.floor(difference / (1000 * 60 * 60));
+    let mins = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    let secs = Math.floor((difference % (1000 * 60)) / 1000);
+    let millis = Math.floor((difference % 1000) / 10);
+
+    timerDisplay.innerHTML = `
+        <span>${formatTime(hours)}</span>:
+        <span>${formatTime(mins)}</span>:
+        <span>${formatTime(secs)}</span>:
+        <span>${formatTime(millis)}</span>
+    `;
+}
+
+function startTimer() {
+    startTime = new Date().getTime() - (difference || 0);
+    tInterval = setInterval(updateTimer, 10);
+}
+
+function pauseTimer() {
+    clearInterval(tInterval);
+}
+
+// PLAY/PAUSE BUTTON
+const playPauseBtn = document.querySelector("#playPause");
 playPauseBtn.addEventListener("click", () => {
     isRunning = !isRunning;
     const icon = playPauseBtn.querySelector("i");
-    icon.className = isRunning ? "fas fa-pause" : "fas fa-play";
+    if (isRunning) {
+        startTimer();
+        icon.className = "fas fa-pause";
+    } else {
+        pauseTimer();
+        icon.className = "fas fa-play";
+    }
 });
 
+// RESET BUTTON
+const resetBtn = document.querySelector("#resetBtn");
+resetBtn.addEventListener("click", () => {
+    clearInterval(tInterval);
+    difference = 0;
+    isRunning = false;
+    timerDisplay.innerHTML = `<span>00</span>:<span>00</span>:<span>00</span>:<span>00</span>`;
+    playPauseBtn.querySelector("i").className = "fas fa-play";
+});
 
+// RECORD FINISH TIME
+const recordBtn = document.querySelector("#recordBtn");
+const recordList = document.querySelector("#recordList");
+let position = 1;
 
-function addRecord(position, time) {
-    const recordList = document.getElementById('recordList');
-    const record = document.createElement('div');
-    record.classList.add('record-row');
-
-    record.innerHTML = `
-        <div class="record-position">#${position}</div>
-        <div class="record-time">${time}</div>
+recordBtn.addEventListener("click", () => {
+    if (!difference) return;
+    const newRow = document.createElement("div");
+    newRow.classList.add("record-row");
+    newRow.innerHTML = `
+        <div>${position}</div>
+        <div>${timerDisplay.textContent}</div>
     `;
-    recordList.appendChild(record);
-}
+    recordList.appendChild(newRow);
+    position++;
+});
 
-// Example usage    
-addRecord(1, "00:34:12:45"); 
-addRecord(2, "00:35:50:22"); 
-addRecord(3, "00:36:15:10"); 
-addRecord(4, "00:37:05:30"); 
-addRecord(5, "00:38:20:15"); 
-addRecord(6, "00:39:45:50"); 
-addRecord(7, "00:40:10:25"); 
-addRecord(8, "00:41:30:40"); 
-addRecord(9, "00:42:05:15"); 
-addRecord(10, "00:43:50:05"); 
-addRecord(11, "00:44:20:30"); 
-addRecord(12, "00:45:15:55"); 
-addRecord(13, "00:46:40:10");
-addRecord(14, "00:47:05:20"); 
-addRecord(15, "00:48:30:35");        
-addRecord(16, "00:49:55:45"); 
-addRecord(17, "00:50:20:50"); 
-addRecord(18, "00:51:10:15"); 
-addRecord(19, "00:52:30:25"); 
-addRecord(20, "00:53:45:35"); 
+// CLEAR BUTTON
+const clearBtn = document.querySelector("#clearBtn");
+clearBtn.addEventListener("click", () => {
+    recordList.innerHTML = "";
+    position = 1;
+});
 
-
+// SUBMIT BUTTON (placeholder for now)
+const submitBtn = document.querySelector(".submit-btn");
+submitBtn.addEventListener("click", () => {
+    alert("Submit functionality coming soon!");
+});

@@ -145,7 +145,7 @@ html, body {
 
 .timer-labels span {
     display: block;
-    width: 70px;
+    width: 90px;
     text-align: center;
     font-size: 0.7rem;
 }
@@ -396,7 +396,7 @@ html, body {
 
     .timer-labels span {
         font-size: 0.6rem;
-        width: 60px;
+        width: 85px;
     }
 
     /* Bottom Controls */
