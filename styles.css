@@ -427,7 +427,7 @@ html, body {
     /* Records Section */
     .records-section {
         padding: 10px; 
-        margin-top: 220px; 
+        margin-top: 210px; 
         max-height: 100%; 
         overflow-y: auto;
     }
