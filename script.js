@@ -46,11 +46,26 @@ function addRecord(position, time) {
     recordList.appendChild(record);
 }
 
-// Example usage
-addRecord(1, "00:34:12:45");
-addRecord(2, "00:35:50:22");
-addRecord(3, "00:35:50:22");
-addRecord(1, "00:34:12:45");
-addRecord(2, "00:35:50:22");
-addRecord(3, "00:35:50:22");
+// Example usage    
+addRecord(1, "00:34:12:45"); 
+addRecord(2, "00:35:50:22"); 
+addRecord(3, "00:36:15:10"); 
+addRecord(4, "00:37:05:30"); 
+addRecord(5, "00:38:20:15"); 
+addRecord(6, "00:39:45:50"); 
+addRecord(7, "00:40:10:25"); 
+addRecord(8, "00:41:30:40"); 
+addRecord(9, "00:42:05:15"); 
+addRecord(10, "00:43:50:05"); 
+addRecord(11, "00:44:20:30"); 
+addRecord(12, "00:45:15:55"); 
+addRecord(13, "00:46:40:10");
+addRecord(14, "00:47:05:20"); 
+addRecord(15, "00:48:30:35");        
+addRecord(16, "00:49:55:45"); 
+addRecord(17, "00:50:20:50"); 
+addRecord(18, "00:51:10:15"); 
+addRecord(19, "00:52:30:25"); 
+addRecord(20, "00:53:45:35"); 
+
 

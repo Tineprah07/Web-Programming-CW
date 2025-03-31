@@ -53,27 +53,33 @@
     <!-- Record Section -->
     <section class="records-section">
         <div class="records-header">
-            <h2><i class="fas fa-list-ol"></i> Race Records</h2>
-            <button class="clear-btn" id="clearRecords"><i class="fas fa-trash"></i> Clear</button>
-        </div>
-    
-        <!-- Record List Header -->
-        <div class="posi-time-header">
-            <span class="record-position-title">Position</span>
-            <span class="record-time-title">Time</span>
-        </div>
-    
-        <!-- Scrollable Record List -->
-        <div class="records-scroll-container" id="recordsContainer">
-            <div class="record-list" id="recordList">
-                <!-- Dynamic Records Appear Here -->
+            <div class="records-title">
+              <i class="fas fa-list-ol"></i>
+              <span>Race Records</span>
+            </div>
+          
+            <div class="records-controls">
+                <button class="icon-btn submit-btn">
+                    <i class="fas fa-paper-plane"></i> Submit
+                </button>
+                
+                <button id="clearBtn" class="icon-btn clear-btn">
+                <i class="fas fa-trash"></i> Clear
+                </button>
             </div>
         </div>
     
-        <button class="submit-btn">Submit Records</button>
+        <div class="records-container" id="recordsContainer">
+        <div class="record-columns">
+            <div class="column-header">Position</div>
+            <div class="column-header">Time</div>
+        </div>
+    
+        <div class="record-columns-list" id="recordList">
+            <!-- JavaScript will populate this area with <div class="record-row"> -->
+        </div>
     </section>
-      
-
+  
     <!-- Bottom Control Section -->
     <section>
         <div class="bottom-control">
