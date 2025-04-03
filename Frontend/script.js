@@ -190,6 +190,33 @@ clearBtn.addEventListener("click", () => {
 
 // SUBMIT BUTTON (placeholder for now)
 const submitBtn = document.querySelector(".submit-btn");
-submitBtn.addEventListener("click", () => {
-    alert("Submit functionality coming soon!");
+submitBtn.addEventListener("click", async () => {
+    const raceRecords = JSON.parse(localStorage.getItem("raceRecords")) || [];
+
+    if (raceRecords.length === 0) {
+        alert("No records to submit.");
+        return;
+    }
+
+    try {
+        const response = await fetch("http://localhost:8080/results", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ records: raceRecords })
+        });
+
+        if (response.ok) {
+            alert("Results submitted successfully!");
+            localStorage.removeItem("raceRecords");
+            location.reload(); // Clear the UI
+        } else {
+            alert("Submission failed. Try again later.");
+        }
+    } catch (error) {
+        console.error("Error submitting results:", error);
+        alert("Network error. Are you connected?");
+    }
 });
+
