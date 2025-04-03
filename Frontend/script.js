@@ -208,15 +208,15 @@ submitBtn.addEventListener("click", async () => {
         });
 
         if (response.ok) {
-            alert("Results submitted successfully!");
+            alert("✅ Results submitted successfully!");
             localStorage.removeItem("raceRecords");
             location.reload(); // Clear the UI
         } else {
-            alert("Submission failed. Try again later.");
+            alert("❌ Submission failed. Try again later.");
         }
     } catch (error) {
         console.error("Error submitting results:", error);
-        alert("Network error. Are you connected?");
+        alert("⚠️ Network error. Are you connected?");
     }
 });
 

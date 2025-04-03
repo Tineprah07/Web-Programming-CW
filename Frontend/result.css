@@ -91,3 +91,16 @@
     font-size: 0.9rem;
     font-weight: 600;
 }
+
+.record-row.loading {
+    color: #999;
+    font-style: italic;
+    justify-content: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  

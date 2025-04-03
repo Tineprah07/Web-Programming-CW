@@ -21,35 +21,32 @@ document.addEventListener("click", function (event) {
 // Fetch submitted results from server
 // Function to load results from the backend
 async function loadResults() {
+    const resultsList = document.getElementById("resultsList");
+
+    // Show loading state immediately
+    resultsList.innerHTML = `<div class="record-row loading">Loading results...</div>`;
+
     try {
-        // Send GET request to /results endpoint
         const response = await fetch("http://localhost:8080/results");
         const data = await response.json();
 
-        // Target the container that will hold the rows
-        const resultsList = document.querySelector("#resultsList");
-        resultsList.innerHTML = ""; // Clear anything already in there
-
-        // If no results found, show a message
-        if (data.length === 0) {
+        if (!data || data.length === 0) {
             resultsList.innerHTML = "<div style='text-align:center;'>No results submitted yet.</div>";
             return;
         }
 
-        // Loop through each record and display it
+        // Replace loading with real content
+        resultsList.innerHTML = "";
         data.forEach((record) => {
             const row = document.createElement("div");
             row.classList.add("record-row");
-
-            // Display position and time
-            row.innerHTML = `
-                <div>${record.position}</div>
-                <div>${record.time}</div>
-            `;
+            row.innerHTML = `<div>${record.position}</div><div>${record.time.replace(/\n/g, '')}</div>`;
             resultsList.appendChild(row);
         });
+
     } catch (err) {
         console.error("Failed to fetch results:", err);
+        resultsList.innerHTML = "<div class='record-row loading'>❌ Failed to load results.</div>";
     }
 }
 // Run loadResults() once the page finishes loading
