@@ -89,3 +89,37 @@ deleteBtn.addEventListener("click", async () => {
         alert("⚠️ Network error. Try again later.");
     }
 });
+
+
+// CSV Export Functionality
+const csvBtn = document.getElementById("downloadCsvBtn");
+// Add event listener to the CSV button
+// This will fetch the results and convert them to CSV format
+csvBtn.addEventListener("click", async () => {
+    try {
+        const response = await fetch("http://localhost:8080/results");
+        const data = await response.json();
+
+        if (!data || data.length === 0) {
+            alert("⚠️ No results to export.");
+            return;
+        }
+        // Convert data to CSV
+        let csvContent = "data:text/csv;charset=utf-8,Position,Time\n";
+        data.forEach(record => {
+            csvContent += `${record.position},${record.time.replace(/\n/g, "")}\n`;
+        });
+        
+        // Trigger download
+        const encodedUri = encodeURI(csvContent);
+        const link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "race_results.csv");
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    } catch (err) {
+        console.error("❌ Failed to export CSV:", err);
+        alert("⚠️ Error exporting to CSV.");
+    }
+});
