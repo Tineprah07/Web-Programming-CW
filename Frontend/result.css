@@ -1,0 +1,93 @@
+/* Reuse base styling from styles.css */
+
+/* Main results container box */
+.records-section {
+    background: white;
+    max-width: 750px;
+    width: 90%;
+    margin: 100px auto 40px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+    position: relative;
+    padding-bottom: 20px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+/* Header section above the results table */
+.records-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 20px;
+    flex-wrap: wrap;
+}
+
+
+/* "Submitted Race Results" text */
+.records-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2e7d71;
+    gap: 5px;
+}
+
+/* Table header row (Position | Time) */
+.record-columns {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    padding: 10px 15px;
+    background: #e0f2f1;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+
+
+/* List container for all individual result rows */
+.record-columns-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+/* Each individual result row */
+.record-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+/* Hover effect for better interactivity */
+.record-row:hover {
+    background-color: #e0f7fa;
+}
+
+/* Container for top-right buttons like 'Delete All' */
+.records-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
