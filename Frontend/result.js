@@ -1,5 +1,6 @@
 // This helps me to run on my local server and on mobile for testing
 // Set BASE_URL to auto-switch between local and mobile
+// Remember to delete this line when submitting
 const BASE_URL = window.location.hostname === "localhost"
   ? "http://localhost:8080"
   : "http://10.3.30.130:8080";
