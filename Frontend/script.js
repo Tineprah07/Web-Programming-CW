@@ -177,6 +177,14 @@ window.addEventListener("DOMContentLoaded", () => {
 // CLEAR BUTTON
 const clearBtn = document.querySelector("#clearBtn");
 clearBtn.addEventListener("click", () => {
+    // Check if there are any saved records
+    const hasRecords = recordList.querySelector(".record-row");
+
+    if (!hasRecords) {
+        alert("⚠️ No recorded results to clear.");
+        return;
+    }
+
     // Remove all record rows from the UI
     recordList.innerHTML = "";
 
