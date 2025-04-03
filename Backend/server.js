@@ -56,7 +56,7 @@ app.get('/results', async (req, res) => {
         const results = await getResults(); // use the imported function
         res.json(results);
     } catch (err) {
-        console.error("Error getting results:", err);
+        console.error("❌ Error getting results:", err);
         res.status(500).json({ error: "Failed to retrieve results" });
     }
 });
@@ -67,11 +67,10 @@ app.delete('/results', async (req, res) => {
         await deleteAllResults();
         return res.status(200).json({ message: "All results deleted" });
     } catch (err) {
-        console.error("Error deleting results:", err); // This will show the real error in terminal
+        console.error("❌ Error deleting results:", err); // This will show the real error in terminal
         return res.status(500).json({ error: "Failed to delete results" });
     }
 });
-
 
 // Start server
 app.listen(PORT, () => {
