@@ -11,8 +11,8 @@
     "setup": "./setup.js"
   },
   "scripts": {
-    "start": "node server.js",
-    "setup": "node setup.js"
+    "start": "node Backend/server.js",
+    "setup": "node Backend/setup.js"
   },
   "keywords": [],
   "author": "",
