@@ -20,6 +20,37 @@ document.addEventListener("click", function (event) {
     }
 });
 
+// ONLINE/OFFLINE STATUS
+// This function checks the online/offline status of the browser
+const offlineStatus = document.querySelector("#offline-status");
+
+// Show the banner with a message and auto-hide it after 4 seconds
+function showBanner(message, bgColor = "#fce4ec", textColor = "#d81b60") {
+    offlineStatus.textContent = message;
+    offlineStatus.style.backgroundColor = bgColor;
+    offlineStatus.style.color = textColor;
+    offlineStatus.classList.add("show");
+
+    // Auto-hide after 4 seconds
+    setTimeout(() => {
+        offlineStatus.classList.remove("show");
+    }, 4000);
+}
+// Check connection status on page load
+window.addEventListener("DOMContentLoaded", () => {
+    if (!navigator.onLine) {
+        showBanner("Offline Mode");
+    }
+});
+// When the device goes offline
+window.addEventListener("offline", () => {
+    showBanner("Offline Mode");
+});
+// When the device comes back online
+window.addEventListener("online", () => {
+    showBanner("You're back online", "#e8f5e9", "#2e7d32"); // Green style
+});
+
 
 // TIMER LOGIC
 // Initialize the timer
@@ -92,7 +123,7 @@ const recordList = document.querySelector("#recordList");
 let position = 1;
 
 recordBtn.addEventListener("click", () => {
-    if (!difference) return;
+    if (!difference) return; // Don't record if the timer hasn't started
 
     // Create a new record row
     const newRow = document.createElement("div");
@@ -106,15 +137,56 @@ recordBtn.addEventListener("click", () => {
     // Automatically scroll to the bottom of the record list
     newRow.scrollIntoView({ behavior: "smooth", block: "nearest" });
 
+    // Save the record to the local storage
+    // Get existing records (or create an empty array if none)
+    const existing = JSON.parse(localStorage.getItem("raceRecords")) || [];
+
+    // Add the new record to the array
+    existing.push({
+        position: position,
+        time: timerDisplay.textContent
+    });
+
+    // Save the updated array back to local storage
+    localStorage.setItem("raceRecords", JSON.stringify(existing));
+
+    // Update the position for the next record
     position++;
 });
+
+// Load race records from localStorage when the page first loads
+window.addEventListener("DOMContentLoaded", () => {
+    const savedRecords = JSON.parse(localStorage.getItem("raceRecords")) || [];
+
+    // Recreate each record row from the saved data
+    savedRecords.forEach(record => {
+        const newRow = document.createElement("div");
+        newRow.classList.add("record-row");
+        newRow.innerHTML = `
+            <div>${record.position}</div>
+            <div>${record.time}</div>
+        `;
+        recordList.appendChild(newRow);
+
+        // Update the position counter based on the last record
+        position = record.position + 1;
+    });
+});
+
 
 // CLEAR BUTTON
 const clearBtn = document.querySelector("#clearBtn");
 clearBtn.addEventListener("click", () => {
+    // Remove all record rows from the UI
     recordList.innerHTML = "";
+
+    // Clear all saved records from localStorage
+    localStorage.removeItem("raceRecords");
+
+    // Reset position counter
     position = 1;
 });
+
 
 // SUBMIT BUTTON (placeholder for now)
 const submitBtn = document.querySelector(".submit-btn");

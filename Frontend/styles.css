@@ -40,6 +40,32 @@ html, body {
     text-decoration: none;
 }
 
+/* Improved Offline Mode Banner */
+/* Smart Status Banner with Smooth Transitions */
+.offline-banner {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    background-color: #fce4ec; /* light pink for offline */
+    color: #d81b60;
+    padding: 12px 24px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Show state */
+.offline-banner.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
 
 /* Sidebar Menu */
 .menu-box {
