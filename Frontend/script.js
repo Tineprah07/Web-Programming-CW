@@ -1,5 +1,11 @@
 // script.js
 
+// Set BASE_URL to auto-switch between local and mobile
+const BASE_URL = window.location.hostname === "localhost"
+  ? "http://localhost:8080"
+  : "http://10.3.30.130:8080";
+
+
 // SIDEBAR TOGGLE
 const menuBtn = document.querySelector("#menu-icon");
 const menuBox = document.querySelector("#menu-box");
@@ -207,7 +213,7 @@ submitBtn.addEventListener("click", async () => {
     }
 
     try {
-        const response = await fetch("http://localhost:8080/results", {
+        const response = await fetch(`${BASE_URL}/results`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

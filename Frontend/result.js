@@ -1,3 +1,10 @@
+// This helps me to run on my local server and on mobile for testing
+// Set BASE_URL to auto-switch between local and mobile
+const BASE_URL = window.location.hostname === "localhost"
+  ? "http://localhost:8080"
+  : "http://10.3.30.130:8080";
+
+  
 // Toggle sidebar
 const menuBtn = document.querySelector("#menu-icon");
 const menuBox = document.querySelector("#menu-box");
@@ -27,7 +34,8 @@ async function loadResults() {
     resultsList.innerHTML = `<div class="record-row loading">Loading results...</div>`;
 
     try {
-        const response = await fetch("http://localhost:8080/results");
+        // Fetch results from the server
+        const response = await fetch(`${BASE_URL}/results`);
         const data = await response.json();
 
         if (!data || data.length === 0) {
@@ -71,7 +79,7 @@ deleteBtn.addEventListener("click", async () => {
     if (!confirmDelete) return;
 
     try {
-        const response = await fetch("http://localhost:8080/results", {
+        const response = await fetch(`${BASE_URL}/results`, {
             method: "DELETE"
         });
 
@@ -94,7 +102,7 @@ const csvBtn = document.querySelector("#downloadCsvBtn");
 // This will fetch the results and convert them to CSV format
 csvBtn.addEventListener("click", async () => {
     try {
-        const response = await fetch("http://localhost:8080/results");
+        const response = await fetch(`${BASE_URL}/results`);
         const data = await response.json();
 
         if (!data || data.length === 0) {
