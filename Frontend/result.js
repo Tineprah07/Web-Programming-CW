@@ -57,11 +57,11 @@ window.addEventListener("DOMContentLoaded", loadResults);
 
 
 // Handle Delete All Results
-const deleteBtn = document.getElementById("deleteResultsBtn");
+const deleteBtn = document.querySelector("#deleteResultsBtn");
 // Add event listener to the delete button
 // This will delete all results from the database
 deleteBtn.addEventListener("click", async () => {
-    const resultsList = document.getElementById("resultsList");
+    const resultsList = document.querySelector("#resultsList");
     // Check if any result rows exist
     const hasResults = resultsList.querySelector(".record-row");
 
@@ -92,7 +92,7 @@ deleteBtn.addEventListener("click", async () => {
 
 
 // CSV Export Functionality
-const csvBtn = document.getElementById("downloadCsvBtn");
+const csvBtn = document.querySelector("#downloadCsvBtn");
 // Add event listener to the CSV button
 // This will fetch the results and convert them to CSV format
 csvBtn.addEventListener("click", async () => {
@@ -104,17 +104,22 @@ csvBtn.addEventListener("click", async () => {
             alert("⚠️ No results to export.");
             return;
         }
-        // Convert data to CSV
+
+        // CSV Header
         let csvContent = "data:text/csv;charset=utf-8,Position,Time\n";
+
+        // Format and clean each record
         data.forEach(record => {
-            csvContent += `${record.position},${record.time.replace(/\n/g, "")}\n`;
+            // Remove all line breaks and extra spaces from time
+            const cleanTime = record.time.replace(/\s+/g, '').replace(/\n/g, '');
+            csvContent += `${record.position},${cleanTime}\n`;
         });
-        
-        // Trigger download
+
+        // Trigger CSV download
         const encodedUri = encodeURI(csvContent);
         const link = document.createElement("a");
         link.setAttribute("href", encodedUri);
-        link.setAttribute("download", "race_results.csv");
+        link.setAttribute("download", "Race Results.csv");
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
