@@ -8,7 +8,7 @@
     "node": ">=18.0.0"
   },
   "bin": {
-    "setup": "./setup.js"
+    "setup": ". Backend/setup.js"
   },
   "scripts": {
     "start": "node Backend/server.js",
