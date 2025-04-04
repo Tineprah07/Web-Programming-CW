@@ -224,7 +224,7 @@ submitBtn.addEventListener("click", async () => {
         });
 
         if (response.ok) {
-            alert("✅ Results submitted successfully!");
+            alert("✅ Results submitted successfully!. Go to the results page to see them.");
             localStorage.removeItem("raceRecords");
             location.reload(); // Clear the UI
         } else {
