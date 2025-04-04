@@ -1,5 +1,10 @@
 /* Reuse base styling from styles.css */
 
+
+.navbar {
+    background-color: #e0f2f1;
+}
+
 /* Main results container box */
 .records-section {
     background: white;
@@ -104,3 +109,47 @@
     to { opacity: 1; }
   }
   
+
+  /* Mobile-Specific Styles for Records Section */
+@media (max-width: 600px) {
+    /* Adjust the Records Section for smaller screens */
+    /* .records-section {
+        width: 95%;
+        margin: 50px auto 20px;
+        padding: 20px;
+        max-height: 60vh;
+    } */
+
+    /* Stack header elements vertically and adjust spacing */
+    .records-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    /* Adjust title font size and spacing for mobile */
+    .records-title {
+        font-size: 1rem;
+        gap: 3px;
+        margin-bottom: auto;
+    }
+
+    /* Adjust table header row (Position | Time) for mobile */
+    .record-columns {
+        font-size: 0.85rem;
+        padding: 8px 10px;
+    }
+
+    /* Ensure only 7 rows are visible and enable scrolling */
+    .record-columns-list {
+        overflow-y: auto;
+        gap: 8px;
+    }
+
+    /* Adjust individual result rows for mobile */
+    .record-row {
+        font-size: 0.85rem;
+        padding: 10px;
+        border-radius: 8px;
+    }
+}
