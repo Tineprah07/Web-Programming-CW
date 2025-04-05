@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About App</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="about-app.css" />
+  <script defer src="about-app.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header>
+    <div class="navbar">
+        <!-- Left: Menu Icon -->
+        <div class="menu-container">
+        <div class="menu-icon" id="menu-icon"><i class="fas fa-bars"></i> Menu</div>
+        </div>
+    
+        <!-- Center: Logo -->
+        <div class="logo"><a href="index.html">Timer</a></div>
+    
+        <!-- Right: icon-->
+        <div class="icon">
+        <i class="fas fa-clock"></i>
+        </div>
+    </div>
+</header>
+
+  <!-- Sidebar Menu -->
+  <div class="menu-box" id="menu-box">
+    <div class="menu-icon-top">
+        <i class="fas fa-info-circle"></i>
+    </div>
+
+    <ul>
+      <li><a href="index.html"><i class="far fa-clock"></i> Timer</a></li>
+      <li><a href="result.html"><i class="fas fa-list"></i> Results</a></li>
+      <li><a href="about-app.html"><i class="fas fa-info-circle"></i> About App</a></li>
+    </ul>
+
+    <div class="menu-section bottom-settings">
+        <div class="menu-heading">
+            <i class="fas fa-cog"></i> 
+            <span>Settings</span>
+        </div>
+
+        <div class="theme-toggle">
+            <span class="toggle-label">Night Mode</span>
+            <label class="switch">
+            <input type="checkbox" id="nightToggle">
+            <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+
+  </div>
+
+  <!-- About App Section -->
+  <section class="records-section">
+    <div class="records-header">
+      <div class="records-title">
+        <i class="fas fa-info-circle"></i>
+        <span>About This App</span>
+      </div>
+    </div>
+
+    <div class="records-container about-content">
+      <p><strong>Timer App</strong> is a race timing tool designed for events like the Pub-to-Pub race hosted by the Portsmouth Joggers' Club. Built as part of the Web Programming coursework (M30237), the app enables:</p>
+      
+      <ul>
+        <li>Starting and stopping a race timer</li>
+        <li>Recording finish times for participants</li>
+        <li>Submitting results (even offline)</li>
+        <li>Exporting and deleting race data</li>
+        <li>Night Mode for improved visibility</li>
+      </ul>
+
+      <p>The app is mobile-first, lightweight, and usable even with gloves or poor lighting — all while working offline in airplane mode.</p>
+    </div>
+  </section>
+
+</body>
+</html>
