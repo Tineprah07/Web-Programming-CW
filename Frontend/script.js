@@ -5,7 +5,7 @@
 // Remember to delete this line when submitting
 const BASE_URL = window.location.hostname === "localhost"
   ? "http://localhost:8080"
-  : "http://10.128.30.227:8080";
+  : "http://10.3.30.143:8080";
 
 
 // SIDEBAR TOGGLE
@@ -236,3 +236,21 @@ submitBtn.addEventListener("click", async () => {
     }
 });
 
+
+const nightToggle = document.querySelector("#nightToggle");
+// Load saved preference from localStorage
+if (localStorage.getItem("nightMode") === "on") {
+    document.body.classList.add("night-mode");
+    nightToggle.checked = true;
+}
+
+// Toggle handler
+nightToggle.addEventListener("change", () => {
+    if (nightToggle.checked) {
+        document.body.classList.add("night-mode");
+        localStorage.setItem("nightMode", "on");
+    } else {
+        document.body.classList.remove("night-mode");
+        localStorage.setItem("nightMode", "off");
+    }
+});
