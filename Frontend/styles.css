@@ -126,6 +126,29 @@ html, body {
     padding-left: 20px;
 }
 
+.menu-section.bottom-settings {
+    margin-top: auto;
+    padding: 30px 30px 30px;
+}
+
+.menu-heading {
+    color: #fff;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: -10px;
+}
+
+.theme-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #fff;
+}
+
+
 /* Time Section */
 .time {
     position: fixed;
@@ -355,10 +378,167 @@ html, body {
 }
 
 
+/* NIGHT MODE TOGGLE */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 30px 0;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.toggle-label {
+    font-weight: 500;
+}
+
+/* The switch container */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Slider (track) */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #aaa;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+/* Slider knob */
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+/* When checked */
+.switch input:checked + .slider {
+    background-color: #4caf50;
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(24px);
+}
+
+/* NIGHT MODE STYLES */
+body.night-mode {
+    background-color: #181a1b;
+    color: #e5e5e5;
+}
+
+body.night-mode .records-section {
+    background-color: #222425;
+    color: #f0f0f0;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+body.night-mode .record-row {
+    background-color: #2b2d2f;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.night-mode .record-row:hover {
+    background-color: #343638;
+}
+
+body.night-mode .record-columns {
+    background-color: #1f2224;
+    color: #c7c7c7;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.night-mode .bottom-control {
+    background-color: #1c1e20;
+    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.4);
+}
+
+body.night-mode .time {
+    background-color: #1e2022;
+    color: #f5f5f5;
+    border-bottom: 1px solid #2c2f33;
+}
+
+body.night-mode .timer span {
+    color: #ffffff;
+}
+
+body.night-mode .timer-labels span {
+    color: #bbbbbb;
+}
+
+body.night-mode .icon-btn {
+    box-shadow: none;
+}
+
+body.night-mode .submit-btn {
+    background-color: #2e7d71;
+    color: #ffffff;
+}
+
+body.night-mode .clear-btn {
+    background-color: #e53935;
+    color: #ffffff;
+}
+
+body.night-mode .control-button {
+    background-color: #2e7d71;
+}
+
+body.night-mode .control-button.small-button {
+    background-color: #3b9a8c;
+}
+
+body.night-mode .button-label {
+    color: #ffffff;
+}
+
+body.night-mode .navbar {
+    background-color: #26292b;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.night-mode .logo a {
+    color: #ffffff;
+}
+
+body.night-mode .icon i {
+    color: #eeeeee;
+}
+
+body.night-mode .menu-icon {
+    color: #ffffff;
+}
+
+
+
 /* ===========================
    Mobile Responsive Styles
    =========================== */
-
    @media (max-width: 600px) {
 
     /* Navbar */
@@ -497,6 +677,54 @@ html, body {
 
     .column-header {
         font-size: 0.8rem;
+    }
+
+    /* SETTINGS on mobile */
+    .menu-section.bottom-settings {
+        padding: 30px 25px 30px;
+        margin-top: auto;
+    }
+
+    .menu-heading {
+        font-size: 14px;
+        margin-bottom: -15px;
+    }
+
+    .menu-heading i {
+        font-size: 16px;
+        gap: 1px;
+    }
+
+    .theme-toggle {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    .toggle-label {
+        font-weight: 500;
+        font-size: 12px; /* Adjusted font size */
+        margin-left: 25px; 
+    }
+
+    /* Smaller toggle for mobile */
+    .switch {
+        width: 36px;
+        height: 18px;
+        margin-right: 8px;
+    }
+
+    .slider::before {
+        height: 12px;
+        width: 12px;
+        left: 3px;
+        bottom: 3px;
+    }
+
+    .switch input:checked + .slider::before {
+        transform: translateX(18px);
     }
 
 }
