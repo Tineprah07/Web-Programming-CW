@@ -4,24 +4,29 @@ import { saveResults } from './database.js';
 import { getResults } from './database.js';
 import { deleteAllResults } from './database.js';
 
-// Import the setup module to ensure the database is set up
-import { exec } from 'child_process';
-import path from 'path';
-import { fileURLToPath } from 'url';
 
-// Get current directory for proper path resolution
+// So the reason for line 9 to 19 is to help my backend server know where the results.db and results.sql file is
+// And to be able to export the database from .db to a .sql file to be human readable
+// Note that i will delete some of these comments, i am using them to work with my code well
+
+// Exec - Allows the JavaScript to run terminal/command-line instructions
+// Hence it is a module that allows to run shell commands automatically
+import { exec } from 'child_process'; 
+import path from 'path'; // This is the path module - it is used to work with file and directory paths
+import { fileURLToPath } from 'url'; // fileURLToPath() converts path from that URL format into a normal path format
+
+// Get current directory and filename
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-// Path to your DB and export file
-const dbPath = path.join(__dirname, '../results.db');
+// Path to DB and export file - these 2 help the backend server know where the results.db and results.sql file is
+const dbPath = path.join(__dirname, '../results.db'); // 
 const exportPath = path.join(__dirname, '../results.sql');
 
 
-const app = express();
+const app = express(); 
 const PORT = 8080;
 app.use(express.static('Frontend')); // serves frontend files
-app.use(express.json()); // parse JSON bodies
+app.use(express.json()); // parse JSON bodies - This line tells your server: “Be ready to understand JSON data sent from the browser.”
 
 // POST results - Save race results to DB
 app.post('/results', async (req, res) => {

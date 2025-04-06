@@ -8,6 +8,9 @@ const BASE_URL = window.location.hostname === "localhost"
   : "http://10.3.30.143:8080";
 
 
+  // Sound effects - stil thinking about it, whether to keep it or not
+  const clickSound = new Audio('mixkit-modern-technology-select-3124.wav');
+
 // SIDEBAR TOGGLE
 const menuBtn = document.querySelector("#menu-icon");
 const menuBox = document.querySelector("#menu-box");
@@ -105,6 +108,7 @@ function pauseTimer() {
 const playPauseBtn = document.querySelector("#playPause");
 playPauseBtn.addEventListener("click", () => {
     isRunning = !isRunning;
+    clickSound.play(); // Play sound on button click
     const icon = playPauseBtn.querySelector("i");
     if (isRunning) {
         startTimer();
