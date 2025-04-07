@@ -40,14 +40,13 @@ html, body {
     text-decoration: none;
 }
 
-/* Improved Offline Mode Banner */
-/* Smart Status Banner with Smooth Transitions */
+/* Offline Mode Banner */
 .offline-banner {
     position: fixed;
     top: 80px;
     left: 50%;
     transform: translateX(-50%) translateY(-20px);
-    background-color: #fce4ec; /* light pink for offline */
+    background-color: #fce4ec;
     color: #d81b60;
     padding: 12px 24px;
     border-radius: 20px;
@@ -86,9 +85,9 @@ html, body {
     text-align: center;
     font-size: 30px;
     color: white;
-    position: relative;  /* Allows fine-tuned positioning */
-    top: -20px;  /* Moves the icon up */
-    margin-bottom: 10px;  /* Reduces space below */
+    position: relative;  
+    top: -20px;  
+    margin-bottom: 10px;  
 }
 
 /* Adjusted Menu Icon */
@@ -200,7 +199,7 @@ html, body {
 }
 
 
-/* Updated Bottom Control Section with 3 buttons */
+/* Bottom Control Section with 3 buttons */
 .bottom-control {
     position: fixed;
     bottom: 0;

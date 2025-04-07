@@ -8,8 +8,8 @@ const BASE_URL = window.location.hostname === "localhost"
   : "http://10.3.30.143:8080";
 
 
-  // Sound effects - stil thinking about it, whether to keep it or not
-  const clickSound = new Audio('mixkit-modern-technology-select-3124.wav');
+// Sound effects - stil thinking about it, whether to keep it or not
+const clickSound = new Audio('mixkit-modern-technology-select-3124.wav');
 
 // SIDEBAR TOGGLE
 const menuBtn = document.querySelector("#menu-icon");
