@@ -8,6 +8,7 @@ import { deleteAllResults } from './database.js';
 // So the reason for line 9 to 19 is to help my backend server know where the results.db and results.sql file is
 // And to be able to export the database from .db to a .sql file to be human readable
 // Note that i will delete some of these comments, i am using them to work with my code well
+// The reason for the result.sql is for testing purpose
 
 // Exec - Allows the JavaScript to run terminal/command-line instructions
 // Hence it is a module that allows to run shell commands automatically

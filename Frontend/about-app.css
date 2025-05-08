@@ -79,7 +79,7 @@ body.night-mode .about-content li {
   }
   
 
-  /* Mobile-Specific Styles for Records Section */
+/* Mobile-Specific Styles for Records Section */
 @media (max-width: 600px) {
     /* Stack header elements vertically and adjust spacing */
     .records-header {

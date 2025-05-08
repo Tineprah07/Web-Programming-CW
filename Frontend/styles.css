@@ -330,12 +330,6 @@ html, body {
 }
 
 
-/* .records-container {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-} */
-
 .record-columns {
     display: flex;
     justify-content: space-between;
