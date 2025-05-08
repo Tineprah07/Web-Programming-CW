@@ -1,12 +1,6 @@
 import sqlite3 from 'sqlite3';
 import { open } from 'sqlite';
 
-// Open the database (async/await compatible)
-// const dbPromise = open({
-//     filename: './results.db',
-//     driver: sqlite3.Database
-// });
-
 // Function to save multiple race records to the DB
 export async function saveResults(records) {
     const db = await open({

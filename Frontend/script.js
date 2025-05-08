@@ -1,13 +1,3 @@
-// script.js
-
-// This helps me to run on my local server and on mobile for testing
-// Set BASE_URL to auto-switch between local and mobile
-// Remember to delete this line when submitting
-const BASE_URL = window.location.hostname === "localhost"
-  ? "http://localhost:8080"
-  : "http://10.3.30.143:8080";
-
-
 // Sound effects - stil thinking about it, whether to keep it or not
 const clickSound = new Audio('mixkit-modern-technology-select-3124.wav');
 
@@ -219,7 +209,7 @@ submitBtn.addEventListener("click", async () => {
     }
 
     try {
-        const response = await fetch(`${BASE_URL}/results`, {
+        const response = await fetch("http://localhost:8080/results", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
