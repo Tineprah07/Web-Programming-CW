@@ -29,7 +29,7 @@ document.addEventListener("click", function (event) {
 // Fetch submitted results from server
 // Function to load results from the backend
 async function loadResults() {
-    const resultsList = document.getElementById("resultsList");
+    const resultsList = document.querySelector("#resultsList");
 
     // Show loading state immediately
     resultsList.innerHTML = `<div class="record-row loading">Loading results...</div>`;
