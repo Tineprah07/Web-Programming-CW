@@ -128,6 +128,38 @@ csvBtn.addEventListener("click", async () => {
 });
 
 
+// ONLINE/OFFLINE STATUS
+// This function checks the online/offline status of the browser
+const offlineStatus = document.querySelector("#offline-status");
+
+// Show the banner with a message and auto-hide it after 4 seconds
+function showBanner(message, bgColor = "#fce4ec", textColor = "#d81b60") {
+    offlineStatus.textContent = message;
+    offlineStatus.style.backgroundColor = bgColor;
+    offlineStatus.style.color = textColor;
+    offlineStatus.classList.add("show");
+
+    // Auto-hide after 4 seconds
+    setTimeout(() => {
+        offlineStatus.classList.remove("show");
+    }, 4000);
+}
+// Check connection status on page load
+window.addEventListener("DOMContentLoaded", () => {
+    if (!navigator.onLine) {
+        showBanner("Offline Mode");
+    }
+});
+// When the device goes offline
+window.addEventListener("offline", () => {
+    showBanner("Offline Mode");
+});
+// When the device comes back online
+window.addEventListener("online", () => {
+    showBanner("You're back online", "#e8f5e9", "#2e7d32"); // Green style
+});
+
+
 // NIGHT MODE TOGGLE LOGIC
 const nightToggle = document.querySelector("#nightToggle");
 
