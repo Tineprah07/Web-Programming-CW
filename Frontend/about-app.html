@@ -12,67 +12,69 @@
 </head>
 
 <body>
-    <!-- Navigation Bar -->
-    <header>
-    <div class="navbar">
-        <!-- Left: Menu Icon -->
-        <div class="menu-container">
-        <div class="menu-icon" id="menu-icon"><i class="fas fa-bars"></i> Menu</div>
-        </div>
-    
-        <!-- Center: Logo -->
-        <div class="logo"><a href="index.html">Timer</a></div>
-    
-        <!-- Right: icon-->
-        <div class="icon">
-          <i class="fas fa-clock"></i>
-        </div>
-    </div>
-</header>
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar">
+      <!-- Left: Menu Icon -->
+      <section class="menu-container">
+        <button class="menu-icon" id="menu-icon"><i class="fas fa-bars"></i> Menu</button>
+      </section>
+
+      <!-- Center: Logo -->
+      <h1 class="logo"><a href="index.html">Timer</a></h1>
+
+      <!-- Right: Icon -->
+      <span class="icon"><i class="fas fa-clock"></i></span>
+    </nav>
+  </header>
 
   <!-- Sidebar Menu -->
-  <div class="menu-box" id="menu-box">
-    <div class="menu-icon-top">
-        <i class="fas fa-info-circle"></i>
-    </div>
+  <aside class="menu-box" id="menu-box">
+    <section class="menu-icon-top">
+      <i class="fas fa-info-circle"></i>
+    </section>
 
-    <ul>
-      <li><a href="index.html"><i class="far fa-clock"></i> Timer</a></li>
-      <li><a href="result.html"><i class="fas fa-list"></i> Results</a></li>
-      <li><a href="about-app.html"><i class="fas fa-info-circle"></i> About App</a></li>
-    </ul>
+    <nav>
+      <ul>
+        <li><a href="index.html"><i class="far fa-clock"></i> Timer</a></li>
+        <li><a href="result.html"><i class="fas fa-list"></i> Results</a></li>
+        <li><a href="about-app.html"><i class="fas fa-info-circle"></i> About App</a></li>
+      </ul>
+    </nav>
 
-    <div class="menu-section bottom-settings">
-        <div class="menu-heading">
-            <i class="fas fa-cog"></i> 
-            <span>Settings</span>
-        </div>
+    <main class="menu-section bottom-settings">
+      <header class="menu-heading">
+        <i class="fas fa-cog"></i> 
+        <span>Settings</span>
+      </header>
 
-        <div class="theme-toggle">
-            <span class="toggle-label">Night Mode</span>
-            <label class="switch">
-            <input type="checkbox" id="nightToggle">
-            <span class="slider"></span>
-            </label>
-        </div>
-    </div>
+      <section class="theme-toggle">
+        <span class="toggle-label">Night Mode</span>
+        <label class="switch">
+          <input type="checkbox" id="nightToggle">
+          <span class="slider"></span>
+        </label>
+      </section>
+    </main>
 
-  </div>
+  </aside>
 
   <!-- About App Section -->
-  <section class="records-section">
-    <div class="records-header">
-      <div class="records-title">
-        <i class="fas fa-info-circle"></i>
-        <span>About This App</span>
-      </div>
-    </div>
+  <main>
+    <section class="records-section">
+      <header class="records-header">
+        <section class="records-title">
+          <i class="fas fa-info-circle"></i>
+          <span>About This App</span>
+        </section>
+      </header>
 
-    <div class="records-container about-content">
+      <article class="records-container about-content">
         <p><strong>Timer App</strong> is a web application designed to accurately time races and record finish positions for up to 500 participants. It was built by student up2158902 as part of the Web Programming coursework (M30237) at the University of Portsmouth.</p>
 
         <p>The app offers an intuitive interface optimized for outdoor use, even in cold or low-light conditions. Key features include:</p>
-    
+
         <ul>
           <li>Start and pause a race timer with millisecond precision</li>
           <li>Record and store finish times locally, even while offline</li>
@@ -80,10 +82,11 @@
           <li>Night Mode for improved readability in dark environments</li>
           <li>Designed for usability with gloves and minimal interaction</li>
         </ul>
-    
+
         <p>Timer App empowers volunteers to run professional-level race timing on any device — all without external libraries or costly equipment.</p>
-      </div>
-  </section>
+      </article>
+    </section>
+  </main>
 
 </body>
 </html>
