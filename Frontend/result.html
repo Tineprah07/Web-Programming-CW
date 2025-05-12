@@ -13,71 +13,77 @@
 
   <!-- Navigation Bar -->
   <header>
-    <div class="navbar">
-      <div class="menu-container">
-        <div class="menu-icon" id="menu-icon"><i class="fas fa-bars"></i> Menu</div>
-      </div>
-      <div class="logo"><a href="index.html">Timer</a></div>
-      <div class="icon"><i class="fas fa-clock"></i></div>
-    </div>
+    <nav class="navbar">
+      <section class="menu-container">
+        <button class="menu-icon" id="menu-icon"><i class="fas fa-bars"></i> Menu</button>
+      </section>
+      <h1 class="logo"><a href="index.html">Timer</a></h1>
+      <span class="icon"><i class="fas fa-clock"></i></span>
+    </nav>
   </header>
 
   <!-- Offline Mode Notice -->
-  <div id="offline-status" class="offline-banner">Offline Mode</div>
+  <aside id="offline-status" class="offline-banner">Offline Mode</aside>
 
   <!-- Sidebar Menu -->
-  <div class="menu-box" id="menu-box">
-    <div class="menu-icon-top"><i class="fas fa-list"></i></div>
-    <ul>
+  <aside class="menu-box" id="menu-box">
+    <section class="menu-icon-top"><i class="fas fa-list"></i></section>
+
+    <nav>
+      <ul>
         <li><a href="index.html"><i class="far fa-clock"></i> Timer</a></li>
         <li><a href="result.html"><i class="fas fa-list"></i> Results</a></li>
         <li><a href="about-app.html"><i class="fas fa-info-circle"></i> About App</a></li>
-    </ul>
+      </ul>
+    </nav>
 
-    <div class="menu-section bottom-settings">
-      <div class="menu-heading"><i class="fas fa-cog"></i> <span>Settings</span></div>
-      <div class="theme-toggle">
+    <section class="menu-section bottom-settings">
+      <header class="menu-heading">
+        <i class="fas fa-cog"></i> <span>Settings</span>
+      </header>
+
+      <section class="theme-toggle">
         <span class="toggle-label">Night Mode</span>
         <label class="switch">
           <input type="checkbox" id="nightToggle">
           <span class="slider"></span>
         </label>
-      </div>
-    </div>    
-  </div>
+      </section>
+
+    </section>
+  </aside>
 
   <!-- Results Section -->
-  <section class="records-section">
-    <div class="records-header">
-      <div class="records-title">
-        <i class="fas fa-list-ol"></i>
-        <span>Submitted Race Results</span>
-      </div>
-    </div>
+  <main>
+    <section class="records-section">
+      <header class="records-header">
+        <div class="records-title">
+          <i class="fas fa-list-ol"></i>
+          <span>Submitted Race Results</span>
+        </div>
+      </header>
 
-    <div class="records-container" id="submittedResults">
-      <div class="record-columns">
-        <div class="column-header">Position</div>
-        <div class="column-header">Time</div>
-        <div class="column-header">Runner ID</div>
-      </div>
-      <div class="record-columns-list" id="resultsList">
-        <div class="record-row loading">Loading results...</div>
-        <!-- JS will populate here -->
-      </div>
-      
-      <div class="records-controls">
-        <button id="downloadCsvBtn" class="icon-btn submit-btn">
+      <article class="records-container" id="submittedResults">
+        <section class="record-columns">
+          <header class="column-header">Position</header>
+          <header class="column-header">Time</header>
+          <header class="column-header">Runner ID</header>
+        </section>
+
+        <section class="record-columns-list" id="resultsList">
+          <p class="record-row loading">Loading results...</p>
+        </section>
+
+        <footer class="records-controls">
+          <button id="downloadCsvBtn" class="icon-btn submit-btn">
             <i class="fas fa-file-csv"></i> Export CSV
-        </button>
-          
-        <button id="deleteResultsBtn" class="icon-btn clear-btn">
-          <i class="fas fa-trash"></i> Delete All
-        </button>
-      </div>
-      
-    </div>
-  </section>
+          </button>
+          <button id="deleteResultsBtn" class="icon-btn clear-btn"> <i class="fas fa-trash"></i> Delete All </button>
+        </footer>
+        
+      </article>
+    </section>
+  </main>
 
   <!-- Javascript File -->
   <script src="result.js"></script>
