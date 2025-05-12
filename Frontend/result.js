@@ -41,7 +41,12 @@ async function loadResults() {
         data.forEach((record) => {
             const row = document.createElement("div");
             row.classList.add("record-row");
-            row.innerHTML = `<div>${record.position}</div><div>${record.time.replace(/\n/g, '')}</div>`;
+            row.innerHTML = `
+                <div>${record.position}</div>
+                <div>${record.time.replace(/\n/g, '')}</div>
+                <div>${record.runnerId || 'N/A'}</div>
+            `;
+
             resultsList.appendChild(row);
         });
 
@@ -104,13 +109,13 @@ csvBtn.addEventListener("click", async () => {
         }
 
         // CSV Header
-        let csvContent = "data:text/csv;charset=utf-8,Position,Time\n";
+        let csvContent = "data:text/csv;charset=utf-8,Position,Time,Runner ID\n";
 
         // Format and clean each record
         data.forEach(record => {
             // Remove all line breaks and extra spaces from time
             const cleanTime = record.time.replace(/\s+/g, '').replace(/\n/g, '');
-            csvContent += `${record.position},${cleanTime}\n`;
+            csvContent += `${record.position},${cleanTime},${record.runnerId || ''}\n`;
         });
 
         // Trigger CSV download

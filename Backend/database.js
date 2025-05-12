@@ -17,9 +17,9 @@ export async function saveResults(records) {
         await db.run("DELETE FROM sqlite_sequence WHERE name='results'");
 
         // Step 3: Insert new records
-        const insertQuery = `INSERT INTO results (position, time) VALUES (?, ?)`;
+        const insertQuery = `INSERT INTO results (position, time, runnerId) VALUES (?, ?, ?)`;
         for (const record of records) {
-            await db.run(insertQuery, [record.position, record.time]);
+            await db.run(insertQuery, [record.position, record.time, record.runnerId]);
         }
         await db.run('COMMIT');
     } catch (error) {
@@ -36,7 +36,7 @@ export async function getResults() {
         driver: sqlite3.Database
     });
 
-    return db.all("SELECT position, time FROM results ORDER BY position ASC");
+    return db.all("SELECT position, time, runnerId FROM results ORDER BY position ASC");
 }
 
 // Function to delete all results from the DB

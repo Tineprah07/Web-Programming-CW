@@ -122,39 +122,68 @@ resetBtn.addEventListener("click", () => {
 // RECORD FINISH TIME
 const recordBtn = document.querySelector("#recordBtn");
 const recordList = document.querySelector("#recordList");
+
+// Modal Elements
+const runnerIdModal = document.getElementById("runnerIdModal");
+const runnerIdInput = document.getElementById("runnerIdInput");
+const modalCancel = document.getElementById("modalCancel");
+const modalOk = document.getElementById("modalOk");
+
+let pendingRecordTime = null;
+
 let position = 1;
 
 recordBtn.addEventListener("click", () => {
-    if (!difference) return; // Don't record if the timer hasn't started
+    if (!difference) return;
 
-    // Create a new record row
+    pendingRecordTime = timerDisplay.textContent;
+    runnerIdInput.value = "";
+    runnerIdModal.style.display = "flex";
+    runnerIdInput.focus();
+});
+
+modalCancel.addEventListener("click", () => {
+    runnerIdModal.style.display = "none";
+    pendingRecordTime = null;
+});
+
+modalOk.addEventListener("click", () => {
+    const runnerId = runnerIdInput.value.trim();
+    if (!runnerId) {
+        alert("⚠️ Please enter a valid Runner ID.");
+        return;
+    }
+
     const newRow = document.createElement("div");
     newRow.classList.add("record-row");
     newRow.innerHTML = `
         <div>${position}</div>
-        <div>${timerDisplay.textContent}</div>
+        <div>${pendingRecordTime}</div>
+        <div>${runnerId}</div>
     `;
     recordList.appendChild(newRow);
-
-    // Automatically scroll to the bottom of the record list
     newRow.scrollIntoView({ behavior: "smooth", block: "nearest" });
 
-    // Save the record to the local storage
-    // Get existing records (or create an empty array if none)
     const existing = JSON.parse(localStorage.getItem("raceRecords")) || [];
-
-    // Add the new record to the array
     existing.push({
         position: position,
-        time: timerDisplay.textContent
+        time: pendingRecordTime,
+        runnerId: runnerId
     });
-
-    // Save the updated array back to local storage
     localStorage.setItem("raceRecords", JSON.stringify(existing));
 
-    // Update the position for the next record
     position++;
+    pendingRecordTime = null;
+    runnerIdModal.style.display = "none";
 });
+
+window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        runnerIdModal.style.display = "none";
+        pendingRecordTime = null;
+    }
+});
+
 
 // Load race records from localStorage when the page first loads
 window.addEventListener("DOMContentLoaded", () => {
@@ -167,6 +196,7 @@ window.addEventListener("DOMContentLoaded", () => {
         newRow.innerHTML = `
             <div>${record.position}</div>
             <div>${record.time}</div>
+            <div>${record.runnerId || "N/A"}</div>
         `;
         recordList.appendChild(newRow);
 

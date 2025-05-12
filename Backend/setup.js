@@ -14,7 +14,8 @@ async function setupDatabase() {
         CREATE TABLE IF NOT EXISTS results (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             position INTEGER NOT NULL,
-            time TEXT NOT NULL
+            time TEXT NOT NULL,
+            runnerId TEXT
         );
     `);
 
