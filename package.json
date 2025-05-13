@@ -15,9 +15,9 @@
     "setup": "node Backend/setup.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "up2158902",
   "license": "ISC",
-  "description": "",
+  "description": "Race Timer web app backend for Web Programming M30237 coursework",
   "dependencies": {
     "express": "^5.1.0",
     "sqlite": "^5.1.1",
