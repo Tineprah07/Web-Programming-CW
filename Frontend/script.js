@@ -1,7 +1,9 @@
-// Sound effects - stil thinking about it, whether to keep it or not
+// Sound effects
 const clickSound = new Audio('mixkit-modern-technology-select-3124.wav');
 
-// SIDEBAR TOGGLE
+// ============================
+// Sidebar Menu Toggle
+// ============================
 const menuBtn = document.querySelector("#menu-icon");
 const menuBox = document.querySelector("#menu-box");
 const body = document.querySelector("body");
@@ -21,8 +23,10 @@ document.addEventListener("click", function (event) {
     }
 });
 
-// ONLINE/OFFLINE STATUS
-// This function checks the online/offline status of the browser
+
+// ============================
+// Online/Offline Status Banner
+// ============================
 const offlineStatus = document.querySelector("#offline-status");
 
 // Show the banner with a message and auto-hide it after 4 seconds
@@ -32,34 +36,31 @@ function showBanner(message, bgColor = "#fce4ec", textColor = "#d81b60") {
     offlineStatus.style.color = textColor;
     offlineStatus.classList.add("show");
 
-    // Auto-hide after 4 seconds
     setTimeout(() => {
         offlineStatus.classList.remove("show");
     }, 4000);
 }
-// Check connection status on page load
+
 window.addEventListener("DOMContentLoaded", () => {
     if (!navigator.onLine) {
         showBanner("Offline Mode");
     }
 });
-// When the device goes offline
 window.addEventListener("offline", () => {
     showBanner("Offline Mode");
 });
-// When the device comes back online
 window.addEventListener("online", () => {
-    showBanner("You're back online", "#e8f5e9", "#2e7d32"); // Green style
+    showBanner("You're back online", "#e8f5e9", "#2e7d32");
 });
 
 
-// TIMER LOGIC
-// Initialize the timer
+// ============================
+// Timer Logic
+// ============================
 const timerDisplay = document.querySelector("#timer");
 let startTime, updatedTime, difference, tInterval;
 let isRunning = false;
 
-// Set up the timer display
 function formatTime(num) {
     return num < 10 ? "0" + num : num;
 }
@@ -93,8 +94,10 @@ function pauseTimer() {
     clearInterval(tInterval);
 }
 
-// PLAY/PAUSE BUTTON
-// This button toggles between play and pause
+
+// ============================
+// Play/Pause Button
+// ============================
 const playPauseBtn = document.querySelector("#playPause");
 playPauseBtn.addEventListener("click", () => {
     isRunning = !isRunning;
@@ -109,7 +112,10 @@ playPauseBtn.addEventListener("click", () => {
     }
 });
 
-// RESET BUTTON
+
+// ============================
+// Reset Button
+// ============================
 const resetBtn = document.querySelector("#resetBtn");
 resetBtn.addEventListener("click", () => {
     clearInterval(tInterval);
@@ -119,7 +125,10 @@ resetBtn.addEventListener("click", () => {
     playPauseBtn.querySelector("i").className = "fas fa-play";
 });
 
-// RECORD FINISH TIME
+
+// ============================
+// Record Finish Time
+// ============================
 const recordBtn = document.querySelector("#recordBtn");
 const recordList = document.querySelector("#recordList");
 
@@ -185,7 +194,9 @@ window.addEventListener("keydown", (e) => {
 });
 
 
-// Load race records from localStorage when the page first loads
+// ====================================
+// Load Existing Records on Page Load
+// ====================================
 window.addEventListener("DOMContentLoaded", () => {
     const savedRecords = JSON.parse(localStorage.getItem("raceRecords")) || [];
 
@@ -206,7 +217,9 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// CLEAR BUTTON
+// ============================
+// Clear All Records Button
+// ============================
 const clearBtn = document.querySelector("#clearBtn");
 clearBtn.addEventListener("click", () => {
     // Check if there are any saved records
@@ -217,18 +230,17 @@ clearBtn.addEventListener("click", () => {
         return;
     }
 
-    // Remove all record rows from the UI
     recordList.innerHTML = "";
-
     // Clear all saved records from localStorage
     localStorage.removeItem("raceRecords");
-
     // Reset position counter
     position = 1;
 });
 
 
-// SUBMIT BUTTON (placeholder for now)
+// ===============================
+// Submit Button (POST to server)
+// ===============================
 const submitBtn = document.querySelector(".submit-btn");
 submitBtn.addEventListener("click", async () => {
     const raceRecords = JSON.parse(localStorage.getItem("raceRecords")) || [];
@@ -261,6 +273,9 @@ submitBtn.addEventListener("click", async () => {
 });
 
 
+// ============================
+// Night Mode Toggle
+// ============================
 const nightToggle = document.querySelector("#nightToggle");
 // Load saved preference from localStorage
 if (localStorage.getItem("nightMode") === "on") {
