@@ -1,22 +1,24 @@
 import sqlite3 from 'sqlite3';
 import { open } from 'sqlite';
 
-// Function to save multiple race records to the DB
+
+/**
+ * Save all race results (replaces existing ones)
+ * Clears old results and resets ID counter
+ * Inserts new records in a transaction
+ */
 export async function saveResults(records) {
     const db = await open({
         filename: './results.db',
         driver: sqlite3.Database
     });
-    // Begin a transaction
+  
     await db.run('BEGIN TRANSACTION');
     try {
-        // Step 1: Delete all existing results
         await db.run("DELETE FROM results");
 
-        // Step 2: Reset the AUTOINCREMENT counter
         await db.run("DELETE FROM sqlite_sequence WHERE name='results'");
 
-        // Step 3: Insert new records
         const insertQuery = `INSERT INTO results (position, time, runnerId) VALUES (?, ?, ?)`;
         for (const record of records) {
             await db.run(insertQuery, [record.position, record.time, record.runnerId]);
@@ -28,8 +30,8 @@ export async function saveResults(records) {
     }
 }
 
-// Function to get all results from the DB
-// This function retrieves all results from the database and orders them by position
+/* Function to get all results from the DB
+This function retrieves all results from the database and orders them by position */
 export async function getResults() {
     const db = await open({
         filename: './results.db',
@@ -48,3 +50,4 @@ export async function deleteAllResults() {
 
     await db.run("DELETE FROM results");
 }
+
