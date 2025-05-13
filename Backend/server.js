@@ -12,6 +12,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Define paths for the SQLite database and SQL export file
+// Note: result.sql is used for development/testing purposes only — to inspect the database in readable format.
 const dbPath = path.join(__dirname, '../results.db');  
 const exportPath = path.join(__dirname, '../results.sql');
 
@@ -33,7 +34,8 @@ app.post('/results', async (req, res) => {
     try {
         await saveResults(records); // Save new race (deletes old)
 
-        // Export fresh result.sql in root
+        // For testing: export the contents of results.db to result.sql for human-readable inspection
+        // This export is used during development to view DB contents outside of SQLite
         exec(`sqlite3 "${dbPath}" .dump > "${exportPath}"`, (error) => {
             if (error) {
                 console.error("Failed to export result.sql:", error.message);
