@@ -1,4 +1,6 @@
-// SIDEBAR TOGGLE
+// ============================
+// Sidebar Toggle
+// ============================
 const menuBtn = document.querySelector("#menu-icon");
 const menuBox = document.querySelector("#menu-box");
 const body = document.querySelector("body");
@@ -18,7 +20,10 @@ document.addEventListener("click", function (event) {
     }
 });
 
-// NIGHT MODE TOGGLE
+
+// ============================
+// Night Mode Toggle
+// ============================
 const nightToggle = document.querySelector("#nightToggle");
 
 // Load saved preference

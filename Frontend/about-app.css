@@ -81,7 +81,6 @@ body.night-mode .about-content li {
 
 /* Mobile-Specific Styles for Records Section */
 @media (max-width: 600px) {
-    /* Stack header elements vertically and adjust spacing */
     .records-header {
         flex-direction: column;
         align-items: flex-start;
@@ -89,14 +88,12 @@ body.night-mode .about-content li {
         margin-bottom: -20px;
     }
 
-    /* Adjust title font size and spacing for mobile */
     .records-title {
         font-size: 1rem;
         gap: 3px;
         margin-bottom: auto;
     }
 
-    /* Adjust padding and font size for the records section */
     .records-section {
         padding: 20px;
         font-size: 0.9rem;
