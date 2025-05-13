@@ -6,8 +6,8 @@ CREATE TABLE results (
             time TEXT NOT NULL,
             runnerId TEXT
         );
-INSERT INTO results VALUES(1,1,replace('\n        00:\n        00:\n        01:\n        94\n    ','\n',char(10)),'A1');
-INSERT INTO results VALUES(2,2,replace('\n        00:\n        00:\n        07:\n        18\n    ','\n',char(10)),'A8');
+INSERT INTO results VALUES(1,1,replace('\n        00:\n        00:\n        00:\n        87\n    ','\n',char(10)),'A1');
+INSERT INTO results VALUES(2,2,replace('\n        00:\n        00:\n        03:\n        96\n    ','\n',char(10)),'A8');
 DELETE FROM sqlite_sequence;
 INSERT INTO sqlite_sequence VALUES('results',2);
 COMMIT;

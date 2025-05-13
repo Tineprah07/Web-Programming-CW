@@ -5,7 +5,7 @@
     background-color: #e0f2f1;
 }
 
-/* Main results container box */
+/* Main results */
 .records-section {
     background: white;
     max-width: 750px;
@@ -22,7 +22,6 @@
     overflow-y: auto;
 }
 
-/* Header section above the results table */
 .records-header {
     display: flex;
     justify-content: space-between;
@@ -31,33 +30,6 @@
     flex-wrap: wrap;
 }
 
-/* Offline Mode Banner */
-.offline-banner {
-    position: fixed;
-    top: 80px;
-    left: 50%;
-    transform: translateX(-50%) translateY(-20px);
-    background-color: #fce4ec;
-    color: #d81b60;
-    padding: 12px 24px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1001;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-/* Show state */
-.offline-banner.show {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-    pointer-events: auto;
-}
-
-/* "Submitted Race Results" text */
 .records-title {
     display: flex;
     align-items: center;
@@ -81,7 +53,6 @@
 }
 
 
-/* List container for all individual result rows */
 .record-columns-list {
     display: flex;
     flex-direction: column;
@@ -129,6 +100,31 @@
     animation: fadeIn 0.3s ease-in-out;
 }
 
+/* Offline Mode Banner */
+.offline-banner {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    background-color: #fce4ec;
+    color: #d81b60;
+    padding: 12px 24px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Show state */
+.offline-banner.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
 
 @keyframes fadeIn {
     from { opacity: 0; }
@@ -138,41 +134,29 @@
 
   /* Mobile-Specific Styles for Records Section */
 @media (max-width: 600px) {
-    /* Adjust the Records Section for smaller screens */
-    /* .records-section {
-        width: 95%;
-        margin: 50px auto 20px;
-        padding: 20px;
-        max-height: 60vh;
-    } */
 
-    /* Stack header elements vertically and adjust spacing */
     .records-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
     }
 
-    /* Adjust title font size and spacing for mobile */
     .records-title {
         font-size: 1rem;
         gap: 3px;
         margin-bottom: auto;
     }
 
-    /* Adjust table header row (Position | Time) for mobile */
     .record-columns {
         font-size: 0.85rem;
         padding: 8px 10px;
     }
 
-    /* Ensure only 7 rows are visible and enable scrolling */
     .record-columns-list {
         overflow-y: auto;
         gap: 8px;
     }
 
-    /* Adjust individual result rows for mobile */
     .record-row {
         font-size: 0.85rem;
         padding: 10px;
