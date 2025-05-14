@@ -1,9 +1,4 @@
 /* Reuse styles from styles.css */
-
-.navbar {
-    background-color: #e0f2f1;
-}
-
 .navbar {
     background-color: #e0f2f1;
 }
@@ -11,19 +6,18 @@
 /* Main results container box */
 .records-section {
     background: white;
-    max-width: 750px;
+    max-width: 46.875rem;
     width: 90%;
-    margin: 100px auto 40px;
-    padding: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
+    margin: 7.5rem auto 2.5rem;
+    padding: 1.875rem;
+    box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.75rem;
     text-align: center;
     animation: fadeIn 0.8s ease-out;
     position: relative;
-    padding-bottom: 20px;
+    padding-bottom: 1.25rem;
     max-height: 70vh;
     overflow-y: auto;
-    margin-top: 120px;
 }
 
 /* Header section above the results table */
@@ -31,11 +25,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10px 20px;
+    padding: 0 0.625rem 1.25rem;
     flex-wrap: wrap;
-    margin-bottom: -20px;
+    margin-bottom: -1.25rem;
 }
-
 
 /* "Submitted Race Results" text */
 .records-title {
@@ -44,24 +37,25 @@
     font-size: 1.2rem;
     font-weight: 600;
     color: #2e7d71;
-    gap: 5px;
+    gap: 0.3125rem;
 }
 
+/* About content */
 .about-content {
     text-align: left;
     font-size: 0.95rem;
     line-height: 1.6;
     color: #333;
-    padding: 10px;
+    padding: 0.625rem;
 }
 
 .about-content ul {
-    margin: 10px 0 10px 20px;
-    padding-left: 10px;
+    margin: 0.625rem 0 0.625rem 1.25rem;
+    padding-left: 0.625rem;
 }
 
 .about-content li {
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
 }
 
 /* Night Mode Overrides */
@@ -76,30 +70,29 @@ body.night-mode .about-content li {
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
-  }
-  
+}
 
 /* Mobile-Specific Styles for Records Section */
 @media (max-width: 600px) {
     .records-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
-        margin-bottom: -20px;
+        gap: 0.625rem;
+        margin-bottom: -1.25rem;
     }
 
     .records-title {
         font-size: 1rem;
-        gap: 3px;
+        gap: 0.1875rem;
         margin-bottom: auto;
     }
 
     .records-section {
-        padding: 20px;
+        padding: 1.25rem;
         font-size: 0.9rem;
-        margin-top: 90px;
+        margin-top: 5.625rem;
     }
-    
+
     .about-content {
         font-size: 0.9rem;
         line-height: 1.4;

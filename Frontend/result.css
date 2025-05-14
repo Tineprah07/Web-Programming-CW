@@ -1,6 +1,4 @@
 /* Reuse base styling from styles.css */
-
-
 .navbar {
     background-color: #e0f2f1;
 }
@@ -8,16 +6,16 @@
 /* Main results */
 .records-section {
     background: white;
-    max-width: 750px;
+    max-width: 46.875rem;
     width: 90%;
-    margin: 120px auto 40px;
-    padding: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
+    margin: 7.5rem auto 2.5rem;
+    padding: 1.875rem;
+    box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.75rem;
     text-align: center;
     animation: fadeIn 0.8s ease-out;
     position: relative;
-    padding-bottom: 20px;
+    padding-bottom: 1.25rem;
     max-height: 70vh;
     overflow-y: auto;
 }
@@ -26,7 +24,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10px 20px;
+    padding: 0 0.625rem 1.25rem;
     flex-wrap: wrap;
 }
 
@@ -36,7 +34,7 @@
     font-size: 1.2rem;
     font-weight: 600;
     color: #2e7d71;
-    gap: 5px;
+    gap: 0.3125rem;
 }
 
 /* Table header row (Position | Time) */
@@ -44,21 +42,20 @@
     display: flex;
     justify-content: space-between;
     font-weight: 600;
-    padding: 10px 15px;
+    padding: 0.625rem 0.9375rem;
     background: #e0f2f1;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     font-size: 0.95rem;
-    margin-top: -10px;
-    margin-bottom: -10px;
+    margin-top: -0.625rem;
+    margin-bottom: -0.625rem;
 }
-
 
 .record-columns-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-top: 15px;
-    max-height: 350px;
+    gap: 0.625rem;
+    margin-top: 0.9375rem;
+    max-height: 21.875rem;
     overflow-y: auto;
 }
 
@@ -66,10 +63,10 @@
 .record-row {
     display: flex;
     justify-content: space-between;
-    padding: 12px 15px;
+    padding: 0.75rem 0.9375rem;
     background: #f8f9fa;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 0.625rem;
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05);
     font-size: 0.95rem;
     transition: all 0.2s ease;
 }
@@ -82,13 +79,13 @@
 /* Container for top-right buttons like 'Delete All' */
 .records-controls {
     display: flex;
-    gap: 10px;
+    gap: 0.625rem;
     align-items: center;
     justify-content: flex-end;
     flex-wrap: wrap;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    padding: 0 10px;
+    margin-top: 0.625rem;
+    margin-bottom: 1.25rem;
+    padding: 0 0.625rem;
     font-size: 0.9rem;
     font-weight: 600;
 }
@@ -103,23 +100,22 @@
 /* Offline Mode Banner */
 .offline-banner {
     position: fixed;
-    top: 80px;
+    top: 5rem;
     left: 50%;
-    transform: translateX(-50%) translateY(-20px);
+    transform: translateX(-50%) translateY(-1.25rem);
     background-color: #fce4ec;
     color: #d81b60;
-    padding: 12px 24px;
-    border-radius: 20px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 1.25rem;
     font-size: 0.85rem;
     font-weight: 500;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
     z-index: 1001;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* Show state */
 .offline-banner.show {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
@@ -129,37 +125,35 @@
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
-  }
-  
+}
 
-  /* Mobile-Specific Styles for Records Section */
+/* Mobile-Specific Styles for Records Section */
 @media (max-width: 600px) {
-
     .records-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
+        gap: 0.625rem;
     }
 
     .records-title {
         font-size: 1rem;
-        gap: 3px;
+        gap: 0.1875rem;
         margin-bottom: auto;
     }
 
     .record-columns {
         font-size: 0.85rem;
-        padding: 8px 10px;
+        padding: 0.5rem 0.625rem;
     }
 
     .record-columns-list {
         overflow-y: auto;
-        gap: 8px;
+        gap: 0.5rem;
     }
 
     .record-row {
         font-size: 0.85rem;
-        padding: 10px;
-        border-radius: 8px;
+        padding: 0.625rem;
+        border-radius: 0.5rem;
     }
 }
