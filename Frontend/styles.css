@@ -22,10 +22,10 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px; 
-    border-radius: 16px;
-    margin: 20px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 1.25rem 2.5rem; 
+    border-radius: 1rem;     
+    margin: 1.25rem;         
+    box-shadow: 0 0.375rem 1.25rem rgba(0, 0, 0, 0.1); 
     position: fixed;
     top: 0;
     left: 0;
@@ -34,7 +34,7 @@ html, body {
 }
 
 .logo a {
-    font-size: 20px;
+    font-size: 1.25rem; 
     font-weight: bold;
     color: black;
     text-decoration: none;
@@ -43,23 +43,22 @@ html, body {
 /* Offline Mode Banner */
 .offline-banner {
     position: fixed;
-    top: 80px;
+    top: 5rem; 
     left: 50%;
-    transform: translateX(-50%) translateY(-20px);
+    transform: translateX(-50%) translateY(-1.25rem); 
     background-color: #fce4ec;
     color: #d81b60;
-    padding: 12px 24px;
-    border-radius: 20px;
+    padding: 0.75rem 1.5rem; 
+    border-radius: 1.25rem; 
     font-size: 0.85rem;
     font-weight: 500;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1); 
     z-index: 1001;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* Show state */
 .offline-banner.show {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
@@ -68,53 +67,50 @@ html, body {
 
 /* Toast Alert */
 .toast {
-  position: fixed;
-  bottom: 140px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #f44336;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
-  z-index: 3000;
+    position: fixed;
+    bottom: 8.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f44336;
+    color: white;
+    padding: 0.75rem 1.5rem; 
+    border-radius: 0.5rem; 
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 3000;
 }
 
 .toast.show {
-  opacity: 1;
+    opacity: 1;
 }
-
 
 /* Sidebar Menu */
 .menu-box {
     position: fixed;
     top: 0;
-    left: -250px;
-    width: 250px;
+    left: -15.625rem; 
+    width: 15.625rem;  
     height: 100%;
     background: #222;
-    padding-top: 100px;
+    padding-top: 6.25rem; 
     transition: 0.5s ease-in-out;
     z-index: 1000;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0.125rem 0 0.3125rem rgba(0, 0, 0, 0.2);
 }
 
-/* Sidebar Top Icon */
 .menu-icon-top {
     text-align: center;
-    font-size: 30px;
+    font-size: 1.875rem; 
     color: white;
-    position: relative;  
-    top: -20px;  
-    margin-bottom: 10px;  
+    position: relative;
+    top: -1.25rem; 
+    margin-bottom: 0.625rem; 
 }
 
-/* Adjusted Menu Icon */
 .menu-icon {
     all: unset;
     cursor: pointer;
@@ -132,27 +128,27 @@ html, body {
 }
 
 .menu-box ul li {
-    padding: 15px;
-    border-bottom: 1px solid #444;
+    padding: 0.9375rem; 
+    border-bottom: 0.0625rem solid #444;
 }
 
 .menu-box ul li a {
     color: white;
     text-decoration: none;
     display: block;
-    font-size: 16px;
+    font-size: 1rem; 
     transition: background 0.3s;
-    padding: 15px;
+    padding: 0.9375rem; 
 }
 
 .menu-box ul li a:hover {
     background: #444;
-    padding-left: 20px;
+    padding-left: 1.25rem; 
 }
 
 .menu-section.bottom-settings {
     margin-top: auto;
-    padding: 30px 30px 30px;
+    padding: 1.875rem; 
 }
 
 .menu-heading {
@@ -160,68 +156,78 @@ html, body {
     font-size: 1rem;
     display: flex;
     align-items: center;
-    gap: 6px;
-    margin-bottom: -10px;
+    gap: 0.375rem;
+    margin-bottom: -0.625rem; 
 }
 
 .theme-toggle {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.85rem;
-    color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  gap: 1rem;
+  font-size: 1rem;
+  color: #fff;
 }
 
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+}
 
 /* Time Section */
 .time {
     position: fixed;
-    top: 0; 
+    top: 0;
     left: 0;
     right: 0;
     z-index: 999;
     background: #e0f2f1;
-    padding: 40px 20px 20px;
+    padding: 2.5rem 1.25rem 1.25rem; 
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.08); 
 }
 
 .timer {
-    font-size: 60px;
+    font-size: 3.75rem; 
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 0.625rem;
     flex-wrap: wrap;
-    margin-top: 100px; 
-    
+    margin-top: 6.25rem; 
 }
 
 .timer span {
     display: block;
     text-align: center;
-    width: 75px;
+    width: 4.6875rem; 
 }
 
 .timer-labels {
     display: flex;
     justify-content: center;
-    gap: 25px;
-    margin-top: -40px;
-    margin-bottom: 10px;
+    gap: 1.5625rem;
+    margin-top: -2.5rem; 
+    margin-bottom: 0.625rem;
 }
 
 .timer-labels span {
     display: block;
-    width: 86px;
+    width: 5.375rem;
     text-align: center;
     font-size: 0.7rem;
 }
+
+/* -------------------------------- */
 
 
 /* Bottom Control Section with 3 buttons */
@@ -230,15 +236,15 @@ html, body {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 120px;
+    height: 7.5rem; 
     background: white;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
+    border-top-left-radius: 2.5rem; 
+    border-top-right-radius: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 60px;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    gap: 3.75rem;
+    box-shadow: 0 -0.25rem 1.25rem rgba(0, 0, 0, 0.1); 
 }
 
 /* Base Style for All Control Buttons */
@@ -246,17 +252,17 @@ html, body {
     background: #00796b;
     border: none;
     border-radius: 50%;
-    width: 70px;
-    height: 70px;
+    width: 4.375rem;   
+    height: 4.375rem;  
     color: white;
-    font-size: 24px;
+    font-size: 1.5rem; 
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.1); 
     cursor: pointer;
     transition: transform 0.2s ease;
-    position: relative; /* Ensure positioning context */
+    position: relative;
 }
 
 .control-button:hover {
@@ -265,9 +271,9 @@ html, body {
 
 /* Smaller Buttons (Reset & Record) */
 .control-button.small-button {
-    width: 60px;
-    height: 60px;
-    font-size: 20px;
+    width: 3.75rem;    
+    height: 3.75rem;   
+    font-size: 1.25rem; 
     background-color: #00897b;
 }
 
@@ -279,7 +285,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
+    gap: 0.375rem; 
 }
 
 .button-label {
@@ -291,17 +297,18 @@ html, body {
 /* Records Section */
 .records-section {
     background: white;
-    max-width: 750px;
+    max-width: 46.875rem; 
     width: 90%;
-    margin: 20px auto 20px;
-    padding: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
+    margin: 1.25rem auto;
+    padding: 1.875rem; 
+    box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.1); 
+    border-radius: 0.75rem; 
     text-align: center;
     animation: fadeIn 0.8s ease-out;
-    position: relative; /* Ensure positioning context */
-    padding-bottom: 20px;
-    margin-top: 280px;max-height: 60vh; /* Limit height to 60% of the viewport */
+    position: relative;
+    padding-bottom: 1.25rem; 
+    margin-top: 17.5rem; 
+    max-height: 60vh;
     overflow-y: auto;
 }
 
@@ -309,7 +316,7 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10px 20px;
+    padding: 0 0.625rem 1.25rem; 
 }
 
 .records-title {
@@ -318,25 +325,25 @@ html, body {
     font-size: 1.2rem;
     font-weight: 600;
     color: #2e7d71;
-    gap: 5px;
+    gap: 0.3125rem; 
 }
 
 .records-controls {
     display: flex;
-    gap: 10px;
+    gap: 0.625rem; 
 }
 
 .icon-btn {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 10px 20px;
+    gap: 0.375rem; 
+    padding: 0.625rem 1.25rem; 
     border: none;
-    border-radius: 8px;
+    border-radius: 0.5rem; 
     font-weight: 500;
     font-size: 0.9rem;
     cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.05); 
     transition: all 0.2s ease;
 }
 
@@ -351,37 +358,37 @@ html, body {
 }
 
 .icon-btn:hover {
-    transform: translateY(-1px);
+    transform: translateY(-0.0625rem); 
 }
 
 .record-columns {
     display: flex;
     justify-content: space-between;
     font-weight: 600;
-    padding: 10px 15px;
+    padding: 0.625rem 0.9375rem; 
     background: #e0f2f1;
-    border-radius: 10px;
+    border-radius: 0.625rem; 
     font-size: 0.95rem;
-    margin-top: -10px;
-    margin-bottom: -10px;
+    margin-top: -0.625rem; 
+    margin-bottom: -0.625rem;
 }
 
 .record-columns-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-top: 15px;
-    max-height: 350px;
-    overflow-y: auto
+    gap: 0.625rem;
+    margin-top: 0.9375rem;
+    max-height: 21.875rem; 
+    overflow-y: auto;
 }
 
 .record-row {
     display: flex;
     justify-content: space-between;
-    padding: 12px 15px;
+    padding: 0.75rem 0.9375rem;
     background: #f8f9fa;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 0.625rem;
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05); 
     font-size: 0.95rem;
     transition: all 0.2s ease;
 }
@@ -394,62 +401,7 @@ html, body {
     text-align: center;
 }
 
-
-/* NIGHT MODE TOGGLE */
-.theme-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin: 30px 0;
-    color: #fff;
-    font-size: 0.9rem;
-}
-
-.toggle-label {
-    font-weight: 500;
-}
-
-/* The switch container */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 48px;
-    height: 24px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-/* Slider (track) */
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #aaa;
-    transition: 0.4s;
-    border-radius: 34px;
-}
-
-/* Slider knob */
-.slider::before {
-    position: absolute;
-    content: "";
-    height: 18px;
-    width: 18px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: 0.4s;
-    border-radius: 50%;
-}
+/* ------------------------------------------ */
 
 
 /* Modal Styles */
@@ -462,7 +414,7 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0, 0, 0, 0.6);
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease;
@@ -470,43 +422,43 @@ html, body {
 
 .modal-content {
   background-color: #fff;
-  padding: 30px;
-  border-radius: 16px;
+  padding: 1.875rem;
+  border-radius: 1rem;
   width: 90%;
-  max-width: 400px;
+  max-width: 25rem; 
   text-align: center;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 0.5rem 1.875rem rgba(0, 0, 0, 0.2); 
   animation: fadeIn 0.3s ease-out;
 }
 
 .modal-content h3 {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem; 
   font-size: 1.2rem;
   color: #00796b;
 }
 
 .modal-content input {
   width: 80%;
-  padding: 12px;
+  padding: 0.75rem; 
   font-size: 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  margin-bottom: 20px;
+  border-radius: 0.5rem;
+  border: 0.0625rem solid #ccc;
+  margin-bottom: 1.25rem; 
 }
 
 .modal-buttons {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
+  gap: 0.625rem; 
 }
 
 .modal-buttons button {
   flex: 1;
-  padding: 10px 0;
+  padding: 0.625rem 0; 
   border: none;
   font-weight: bold;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 0.5rem; 
   font-size: 0.95rem;
   transition: background 0.2s;
 }
@@ -524,118 +476,116 @@ html, body {
   background: #00685a;
 }
 
-
 /* When checked */
 .switch input:checked + .slider {
-    background-color: #4caf50;
+  background-color: #4caf50;
 }
 
 .switch input:checked + .slider::before {
-    transform: translateX(24px);
+  transform: translateX(1.5rem); 
 }
 
 /* NIGHT MODE STYLES */
 body.night-mode {
-    background-color: #181a1b;
-    color: #e5e5e5;
+  background-color: #181a1b;
+  color: #e5e5e5;
 }
 
 body.night-mode .records-section {
-    background-color: #222425;
-    color: #f0f0f0;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  background-color: #222425;
+  color: #f0f0f0;
+  box-shadow: 0 0 1.875rem rgba(0, 0, 0, 0.3); 
 }
 
 body.night-mode .record-row {
-    background-color: #2b2d2f;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: #2b2d2f;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.05);
 }
 
 body.night-mode .record-row:hover {
-    background-color: #343638;
+  background-color: #343638;
 }
 
 body.night-mode .record-columns {
-    background-color: #1f2224;
-    color: #c7c7c7;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: #1f2224;
+  color: #c7c7c7;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.4); 
+  border: 0.0625rem solid rgba(255, 255, 255, 0.05);
 }
 
 body.night-mode .bottom-control {
-    background-color: #1c1e20;
-    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.4);
+  background-color: #1c1e20;
+  box-shadow: 0 -0.25rem 1.875rem rgba(0, 0, 0, 0.4); 
 }
 
 body.night-mode .time {
-    background-color: #1e2022;
-    color: #f5f5f5;
-    border-bottom: 1px solid #2c2f33;
+  background-color: #1e2022;
+  color: #f5f5f5;
+  border-bottom: 0.0625rem solid #2c2f33;
 }
 
 body.night-mode .timer span {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 body.night-mode .timer-labels span {
-    color: #bbbbbb;
+  color: #bbbbbb;
 }
 
 body.night-mode .icon-btn {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 body.night-mode .submit-btn {
-    background-color: #2e7d71;
-    color: #ffffff;
+  background-color: #2e7d71;
+  color: #ffffff;
 }
 
 body.night-mode .clear-btn {
-    background-color: #e53935;
-    color: #ffffff;
+  background-color: #e53935;
+  color: #ffffff;
 }
 
 body.night-mode .control-button {
-    background-color: #2e7d71;
+  background-color: #2e7d71;
 }
 
 body.night-mode .control-button.small-button {
-    background-color: #3b9a8c;
+  background-color: #3b9a8c;
 }
 
 body.night-mode .button-label {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 body.night-mode .navbar {
-    background-color: #26292b;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: #26292b;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.4); 
+  border: 0.0625rem solid rgba(255, 255, 255, 0.05);
 }
 
 body.night-mode .logo a {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 body.night-mode .icon i {
-    color: #eeeeee;
+  color: #eeeeee;
 }
 
 body.night-mode .menu-icon {
-    color: #ffffff;
+  color: #ffffff;
 }
 
-/* Night Mode Styles for Modal */
 body.night-mode .modal-content {
   background-color: #2c2f33;
   color: #f0f0f0;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 1.875rem rgba(0, 0, 0, 0.5); 
 }
 
 body.night-mode .modal-content input {
   background-color: #444;
   color: #fff;
-  border: 1px solid #777;
+  border: 0.0625rem solid #777;
 }
 
 body.night-mode .modal-buttons button {
@@ -656,193 +606,189 @@ body.night-mode .modal-buttons button#modalOk:hover {
 /* ===========================
    Mobile Responsive Styles
    =========================== */
-   @media (max-width: 600px) {
+@media (max-width: 37.5rem) {
 
-    /* Navbar */
-    .navbar {
-        padding: 15px 20px;
-        flex-direction: row;
-        gap: 10px;
-    }
-    
-    .logo a {
-        font-size: 16px;
-    }
+  /* Navbar */
+  .navbar {
+    padding: 0.9375rem 1.25rem; 
+    flex-direction: row;
+    gap: 0.625rem;
+  }
 
-    .menu-icon {
-        font-size: 14px;
-    }
+  .logo a {
+    font-size: 1rem;
+  }
 
-    /* Sidebar menu stays the same - touch-friendly by default */
-    .menu-box {
-        width: 200px; 
-    }
-    
-    .menu-box ul li {
-        padding: 10px;
-    }
+  .menu-icon {
+    font-size: 0.875rem;
+  }
 
-    .menu-box ul li a {
-        font-size: 14px;
-    }
+  .menu-box {
+    width: 12.5rem; 
+  }
 
-    .menu-icon-top {
-        font-size: 24px; 
-        top: -10px; 
-    }
+  .menu-box ul li {
+    padding: 0.625rem;
+  }
 
-    .menu-icon-top span {
-        font-size: 0.8rem; 
-    }
+  .menu-box ul li a {
+    font-size: 0.875rem;
+  }
 
-    .menu-box ul li a:hover {
-        padding-left: 15px; 
-    }
+  .menu-icon-top {
+    font-size: 1.5rem;
+    top: -0.625rem; 
+  }
 
-    /* Time Section */
-    .time {
-        padding: 20px 10px 10px;
-        margin-top: -20px; 
-    }
+  .menu-icon-top span {
+    font-size: 0.8rem;
+  }
 
-    .timer {
-        font-size: 50px;
-        gap: 5px;
-        margin-top: 100px; 
-        margin-bottom: 10px;
-    }
+  .menu-box ul li a:hover {
+    padding-left: 0.9375rem;
+  }
 
-    .timer-labels {
-        gap: 18px;
-        margin-top: -20px;
-    }
+  /* Time Section */
+  .time {
+    padding: 1.25rem 0.625rem 0.625rem; 
+    margin-top: -1.25rem; 
+  }
 
-    .timer-labels span {
-        font-size: 0.6rem;
-        width: 81px;
-    }
+  .timer {
+    font-size: 3.125rem; 
+    gap: 0.3125rem; 
+    margin-top: 6.25rem; 
+    margin-bottom: 0.625rem; 
+  }
 
-    /* Bottom Controls */
-    .bottom-control {
-        gap: 20px;
-        padding: 10px;
-        height: 100px;
-        margin-top: 0px;
-    }
+  .timer-labels {
+    gap: 1.125rem; 
+    margin-top: -1.25rem; 
+  }
 
-    .control-button {
-        width: 60px;
-        height: 60px;
-        font-size: 20px;
-    }
+  .timer-labels span {
+    font-size: 0.6rem;
+    width: 5.0625rem; 
+  }
 
-    .control-button.small-button {
-        width: 50px;
-        height: 50px;
-        font-size: 18px;
-    }
+  /* Bottom Controls */
+  .bottom-control {
+    gap: 1.25rem;
+    padding: 0.625rem; 
+    height: 6.25rem;
+    margin-top: 0;
+  }
 
-    .button-label {
-        font-size: 0.65rem;
-    }
+  .control-button {
+    width: 3.75rem;  
+    height: 3.75rem; 
+    font-size: 1.25rem; 
+  }
 
-    /* Records Section */
-    .records-section {
-        padding: 10px; 
-        margin-top: 210px; 
-        max-height: 100%; 
-        overflow-y: auto;
-    }
+  .control-button.small-button {
+    width: 3.125rem; 
+    height: 3.125rem;
+    font-size: 1.125rem;
+  }
 
-    .records-header {
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 10px;
-    }
+  .button-label {
+    font-size: 0.65rem;
+  }
 
-    .records-title {
-        font-size: 1rem;
-        gap: 2px;
-        margin-top: auto;
-    }
+  /* Records Section */
+  .records-section {
+    padding: 0.625rem; 
+    margin-top: 13.125rem; 
+    max-height: 100%;
+    overflow-y: auto;
+  }
 
-    .records-controls {
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 5px;
-    }
+  .records-header {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.625rem; 
+  }
 
-    .icon-btn {
-        font-size: 0.7rem;
-        padding: 6px 12px;
-    }
+  .records-title {
+    font-size: 1rem;
+    gap: 0.125rem; 
+    margin-top: auto;
+  }
 
-    .record-columns {
-        font-size: 0.85rem;
-        padding: 8px 10px;
-    }
+  .records-controls {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.3125rem; 
+  }
 
-    .record-columns-list {
-        max-height: 240px; 
-        overflow-y: auto;
-    }
+  .icon-btn {
+    font-size: 0.7rem;
+    padding: 0.375rem 0.75rem; 
+  }
 
-    .record-row {
-        font-size: 0.85rem;
-        padding: 10px 12px;
-    }
+  .record-columns {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.625rem; 
+  }
 
-    .column-header {
-        font-size: 0.8rem;
-    }
+  .record-columns-list {
+    max-height: 15rem;
+    overflow-y: auto;
+  }
 
-    /* SETTINGS on mobile */
-    .menu-section.bottom-settings {
-        padding: 30px 25px 30px;
-        margin-top: auto;
-    }
+  .record-row {
+    font-size: 0.85rem;
+    padding: 0.625rem 0.75rem; 
+  }
 
-    .menu-heading {
-        font-size: 14px;
-        margin-bottom: -15px;
-    }
+  .column-header {
+    font-size: 0.8rem;
+  }
 
-    .menu-heading i {
-        font-size: 16px;
-        gap: 1px;
-    }
+  /* SETTINGS on mobile */
+  .menu-section.bottom-settings {
+    padding: 1.875rem 1.5625rem; 
+    margin-top: auto;
+  }
 
-    .theme-toggle {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 14px;
-    }
+  .menu-heading {
+    font-size: 0.875rem; 
+    margin-bottom: -0.9375rem;
+  }
 
-    .toggle-label {
-        font-weight: 500;
-        font-size: 12px; /* Adjusted font size */
-        margin-left: 25px; 
-    }
+  .menu-heading i {
+    font-size: 1rem; 
+    gap: 0.0625rem; 
+  }
 
-    /* Smaller toggle for mobile */
-    .switch {
-        width: 36px;
-        height: 18px;
-        margin-right: 8px;
-    }
+  .theme-toggle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem; 
+  }
 
-    .slider::before {
-        height: 12px;
-        width: 12px;
-        left: 3px;
-        bottom: 3px;
-    }
+  .toggle-label {
+    font-weight: 500;
+    font-size: 0.75rem; 
+    margin-left: 1.5625rem; 
+  }
 
-    .switch input:checked + .slider::before {
-        transform: translateX(18px);
-    }
+  .switch {
+    width: 2.25rem;  
+    height: 1.125rem; 
+    margin-right: 0.5rem;
+  }
 
+  .slider::before {
+    height: 0.75rem; 
+    width: 0.75rem;
+    left: 0.1875rem;
+    bottom: 0.1875rem;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(1.125rem); 
+  }
 }
-

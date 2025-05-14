@@ -183,7 +183,7 @@ modalOk.addEventListener("click", () => {
     const existing = JSON.parse(localStorage.getItem("raceRecords")) || [];
     const duplicate = existing.find(r => r.runnerId.toLowerCase() === runnerId.toLowerCase());
     if (duplicate) {
-        showToast(`⚠️ Runner ID "${runnerId}" already exists.\nPlease enter a unique ID.`, "#f44336");
+        showToast(`⚠️ Runner ID "${runnerId}" already exists.`, "#f44336");
         return;
     }
 
