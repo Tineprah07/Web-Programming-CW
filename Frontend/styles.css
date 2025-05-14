@@ -227,8 +227,6 @@ html, body {
     font-size: 0.7rem;
 }
 
-/* -------------------------------- */
-
 
 /* Bottom Control Section with 3 buttons */
 .bottom-control {
@@ -401,8 +399,61 @@ html, body {
     text-align: center;
 }
 
-/* ------------------------------------------ */
+/* NIGHT MODE TOGGLE */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 1.875rem 0;
+    color: #fff;
+    font-size: 0.9rem;
+}
 
+.toggle-label {
+    font-weight: 500;
+}
+
+/* The switch container */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 3rem;   
+    height: 1.5rem; 
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Slider (track) */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #aaa;
+    transition: 0.4s;
+    border-radius: 2.125rem;
+}
+
+/* Slider knob */
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 1.125rem; 
+    width: 1.125rem;  
+    left: 0.1875rem;  
+    bottom: 0.1875rem;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
 
 /* Modal Styles */
 .modal {
