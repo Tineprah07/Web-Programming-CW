@@ -55,6 +55,22 @@ window.addEventListener("online", () => {
 
 
 // ============================
+// Toast Notification Function
+// ============================
+function showToast(message, bgColor = "#f44336") {
+    const toast = document.querySelector("#toast");
+    toast.textContent = message;
+    toast.style.backgroundColor = bgColor;
+    toast.classList.add("show");
+
+    // Hide after 3 seconds
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 3000);
+}
+
+
+// ============================
 // Timer Logic
 // ============================
 const timerDisplay = document.querySelector("#timer");
@@ -133,10 +149,10 @@ const recordBtn = document.querySelector("#recordBtn");
 const recordList = document.querySelector("#recordList");
 
 // Modal Elements
-const runnerIdModal = document.getElementById("runnerIdModal");
-const runnerIdInput = document.getElementById("runnerIdInput");
-const modalCancel = document.getElementById("modalCancel");
-const modalOk = document.getElementById("modalOk");
+const runnerIdModal = document.querySelector("#runnerIdModal");
+const runnerIdInput = document.querySelector("#runnerIdInput");
+const modalCancel = document.querySelector("#modalCancel");
+const modalOk = document.querySelector("#modalOk");
 
 let pendingRecordTime = null;
 
@@ -159,7 +175,15 @@ modalCancel.addEventListener("click", () => {
 modalOk.addEventListener("click", () => {
     const runnerId = runnerIdInput.value.trim();
     if (!runnerId) {
-        alert("⚠️ Please enter a valid Runner ID.");
+        showToast("⚠️ Runner ID is required.");
+        return;
+    }
+
+    // Check for duplicate
+    const existing = JSON.parse(localStorage.getItem("raceRecords")) || [];
+    const duplicate = existing.find(r => r.runnerId.toLowerCase() === runnerId.toLowerCase());
+    if (duplicate) {
+        showToast(`⚠️ Runner ID "${runnerId}" already exists.\nPlease enter a unique ID.`, "#f44336");
         return;
     }
 
@@ -173,7 +197,6 @@ modalOk.addEventListener("click", () => {
     recordList.appendChild(newRow);
     newRow.scrollIntoView({ behavior: "smooth", block: "nearest" });
 
-    const existing = JSON.parse(localStorage.getItem("raceRecords")) || [];
     existing.push({
         position: position,
         time: pendingRecordTime,
@@ -185,6 +208,7 @@ modalOk.addEventListener("click", () => {
     pendingRecordTime = null;
     runnerIdModal.style.display = "none";
 });
+
 
 window.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
