@@ -2,9 +2,9 @@
 
 ## Overview
 
-**Race Time** is a web-based race timing application developed for the Portsmouth Joggers' Club in support of their upcoming “Pub-to-Pub” race. The system is designed to be used entirely offline (e.g. in airplane mode) and works seamlessly in outdoor, winter conditions, including use by individuals wearing gloves.
+**Race Time** is a web-based race timing application developed for the Portsmouth Joggers' Club in support of their upcoming “Pub-to-Pub” race. The system works both online and offline (e.g. in airplane mode) and works seamlessly in outdoor, winter conditions, including use by individuals wearing gloves.
 
-Built using only core web technologies—**Node.js with Express, SQLite, vanilla JavaScript, HTML, and CSS**—this app meets the strict delivery requirements outlined in the coursework brief. No external libraries or frameworks were used (other than Express and SQLite).
+Built using only core web technologies—**Node.js with Express, SQLite, JavaScript, HTML, and CSS**—this app meets the strict delivery requirements outlined in the coursework brief. No external libraries or frameworks were used (other than Express and SQLite).
 
 ---
 
@@ -46,47 +46,83 @@ Built using only core web technologies—**Node.js with Express, SQLite, vanilla
 
 ---
 
-## AI Usage & Reflection
+## AI Usage and Reflection
 
-Generative AI (ChatGPT) was used during development to assist with brainstorming, syntax questions, and troubleshooting issues. Every AI-assisted step was interpreted, tested, and adapted by me to fit the real-world context of this application.
+Generative AI (ChatGPT) was used as a tool to accelerate development, troubleshoot bugs, and clarify implementation logic. All code was written and tested by me; AI suggestions were interpreted, revised, and contextualized before inclusion.
 
-### Backend Development
-- **Prompt**: _"How do I build a REST API in Express with SQLite?"_
-  - Helped scaffold API routes (`POST /results`, `GET /results`) and inspired the DB schema.
-  - Final structure, validation, and data handling were built independently.
+### Backend Prompts Used
 
-- **Prompt**: _"How to store time as milliseconds and convert to HH:MM:SS?"_
-  - Provided a formula. I refined it to support long-duration races and ensure frontend/backend consistency.
+> “How do I build a REST API using Express and SQLite?”  
+Helped structure routes (`/results` GET and POST) and understand best practices for SQLite interactions.
 
-### Frontend & UX
-- **Prompt**: _"How can I design a mobile-friendly UI for use with gloves?"_
-  - AI emphasized large targets and clean contrast. I implemented this in my layout and button sizing.
+> "What’s the best way to store timestamps for race finish times?"
+Led to using Date.now() for millisecond precision.
 
-- **Prompt**: _"How to detect offline mode and sync when back online?"_
-  - Guided my use of `navigator.onLine`, `localStorage`, and fallback strategies for result submission.
+> “How to convert milliseconds to HH:MM:SS format in JS?”  
+AI provided logic, which I customized for 24-hour race scenarios.
 
-### Debugging Help
-- **Prompt**: _"Why is my fetch request failing with a CORS error?"_
-  - AI helped me add appropriate headers and check for correct server-side response handling.
+> “How to use parameterized queries with SQLite in Node.js?”  
+Led to safe insertion methods using `db.run` with placeholders.
 
 ---
 
-## Asset Attribution
+### Frontend/UI Prompts Used
 
-A subtle "pop" sound effect is played when the race timer starts, enhancing the user experience with audio feedback that reinforces the action. This is especially useful in outdoor race settings where users may rely on more than visual cues.
+> “How to make a UI accessible for gloves and low visibility?”  
+Encouraged larger buttons, high contrast, and simplified touch zones.
 
-- **Source**: [Mixkit Pop Sound Effect – Free License](https://mixkit.co/free-sound-effects/pop/)
+> “Toggle dark mode using JavaScript and localStorage?”  
+Informed my implementation of the themed toggle and persistent styling.
 
+> “Fetch and display JSON data without libraries?”  
+Guided me in building dynamic DOM updates for the results page.
+
+---
+
+### Offline Sync and Debugging
+
+> “Detect offline mode in a web app?”  
+Helped implement `navigator.onLine` checks.
+
+> “Store unsent data and send when reconnected?”  
+Inspired the caching strategy using `localStorage` with retry-on-sync logic.
+
+### Debugging and Testing
+
+> "Why isn't localStorage saving my race results after page reload?"
+Led me to confirm JSON.stringify() and JSON.parse() usage around arrays and objects.
+
+---
+
+## Setup and Usage
+
+1. Extract the `.zip` file and open a terminal in the root folder.
+2. Run: `npm install`
+3. Run: `npm run setup` to initialize the SQLite database.
+4. Run: `npm start`
+5. Visit `http://localhost:8080` in your browser.
 
 ---
 
 ## Development Improvements Since Prototype
 
-- Added persistent offline race data logging via localStorage.
-- Redesigned the interface for outdoor usability and winter gloves.
-- Live result updates using frontend fetch and dynamic rendering.
-- Backend now includes server-side error handling and input validation.
-- Improved sorting logic for results, including tie handling and display formatting.
+| Area | Improvements |
+|------|--------------|
+| **Frontend** | Rewritten UI for better visibility, accessibility, and glove usability. |
+| **Offline Sync** | Implemented `navigator.onLine` with `localStorage` caching for seamless syncing. |
+| **Dark Mode** | Added full light/dark theme with toggle switch and styling persistence. |
+| **Audio UX** | Added sound cue on race start for enhanced user awareness. |
+| **Result Sorting** | Developed tie-aware sorting logic for accurate placement. |
+| **Dynamic DOM** | Converted results to load dynamically using `fetch()` instead of full-page refresh. |
+| **Backend Resilience** | Improved Express routes with try/catch handling and input sanitization. |
+
+
+---
+
+## Attribution
+
+- **Sound Effect**: Pop sound at race start to give audio confirmation.  
+  Source: [Mixkit – Free Pop Sound](https://mixkit.co/free-sound-effects/pop/)
 
 ---
 
