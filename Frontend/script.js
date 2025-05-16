@@ -191,12 +191,12 @@ modalOk.addEventListener("click", () => {
         return;
     }
 
-    const newRow = document.createElement("div");
+    const newRow = document.createElement("article");
     newRow.classList.add("record-row");
     newRow.innerHTML = `
-        <div>${position}</div>
-        <div>${pendingRecordTime}</div>
-        <div>${runnerId}</div>
+        <span>${position}</span>
+        <span>${pendingRecordTime}</span>
+        <span>${runnerId}</span>
     `;
     recordList.appendChild(newRow);
     newRow.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -230,12 +230,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Recreate each record row from the saved data
     savedRecords.forEach(record => {
-        const newRow = document.createElement("div");
+        const newRow = document.createElement("article");
         newRow.classList.add("record-row");
         newRow.innerHTML = `
-            <div>${record.position}</div>
-            <div>${record.time}</div>
-            <div>${record.runnerId || "N/A"}</div>
+            <span>${record.position}</span>
+            <span>${record.time}</span>
+            <span>${record.runnerId || "N/A"}</span>
         `;
         recordList.appendChild(newRow);
 
@@ -279,7 +279,7 @@ submitBtn.addEventListener("click", async () => {
     }
 
     try {
-        const response = await fetch("http://localhost:8080/results", {
+        const response = await fetch("/results", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

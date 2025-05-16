@@ -25,26 +25,26 @@ document.addEventListener("click", function (event) {
 async function loadResults() {
     const resultsList = document.querySelector("#resultsList");
 
-    resultsList.innerHTML = `<div class="record-row loading">Loading results...</div>`;
+    resultsList.innerHTML = `<section class="record-row loading">Loading results...</section>`;
     try {
         // Fetch results from the server
-        const response = await fetch("http://localhost:8080/results");
+        const response = await fetch("/results");
         const data = await response.json();
 
         if (!data || data.length === 0) {
-            resultsList.innerHTML = "<div style='text-align:center;'>No results submitted yet.</div>";
+            resultsList.innerHTML = "<p style='text-align:center;'>No results submitted yet.</p>";
             return;
         }
 
         // Replace loading with real content
         resultsList.innerHTML = "";
         data.forEach((record) => {
-            const row = document.createElement("div");
+            const row = document.createElement("article");
             row.classList.add("record-row");
             row.innerHTML = `
-                <div>${record.position}</div>
-                <div>${record.time.replace(/\n/g, '')}</div>
-                <div>${record.runnerId || 'N/A'}</div>
+                <span>${record.position}</span>
+                <span>${record.time.replace(/\n/g, '')}</span>
+                <span>${record.runnerId || 'N/A'}</span>
             `;
 
             resultsList.appendChild(row);
@@ -52,7 +52,7 @@ async function loadResults() {
 
     } catch (err) {
         console.error("Failed to fetch results:", err);
-        resultsList.innerHTML = "<div class='record-row loading'>❌ Failed to load results.</div>";
+        resultsList.innerHTML = "<section class='record-row loading'>❌ Failed to load results.</section>";
     }
 }
 window.addEventListener("DOMContentLoaded", loadResults);
@@ -76,7 +76,7 @@ deleteBtn.addEventListener("click", async () => {
     if (!confirmDelete) return;
 
     try {
-        const response = await fetch("http://localhost:8080/results", {
+        const response = await fetch("/results", {
             method: "DELETE"
         });
 
@@ -98,7 +98,7 @@ deleteBtn.addEventListener("click", async () => {
 const csvBtn = document.querySelector("#downloadCsvBtn");
 csvBtn.addEventListener("click", async () => {
     try {
-        const response = await fetch("http://localhost:8080/results");
+        const response = await fetch("/results");
         const data = await response.json();
 
         if (!data || data.length === 0) {
