@@ -124,6 +124,14 @@ Led me to confirm JSON.stringify() and JSON.parse() usage around arrays and obje
 - **Sound Effect**: Pop sound at race start to give audio confirmation.  
   Source: [Mixkit – Free Pop Sound](https://mixkit.co/free-sound-effects/pop/)
 
+## Icon Attribution
+- **Icons**
+- Most icons used were sourced from [Icons8](https://icons8.com) under their free license for educational use.
+- Some additional icons are from the [Font Awesome Free Icon Set](https://fontawesome.com/) and used under the Creative Commons Attribution 4.0 license.
+
+- `chronometer.png` used as the title icon was downloaded from [Flaticon](https://www.flaticon.com/free-icon/chronometer_7529281?term=race+chronometer&page=1&position=75&origin=search&related_id=7529281).  
+    Icon by [Freepik](https://www.flaticon.com/authors/freepik) on Flaticon — used under the Flaticon Free License for personal and educational use.
+    
 ---
 
 ## Final Reflection
