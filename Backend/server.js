@@ -36,12 +36,19 @@ app.post('/results', async (req, res) => {
 
         // For testing: export the contents of results.db to result.sql for human-readable inspection
         // This export is used during development to view DB contents outside of SQLite
-        exec(`sqlite3 "${dbPath}" .dump > "${exportPath}"`, (error) => {
-            if (error) {
-                console.error("Failed to export result.sql:", error.message);
-            } else {
-                console.log("✅ result.sql updated for testing purpose.");
+        exec(`which sqlite3`, (whichErr) => {
+            if (whichErr) {
+                console.warn("⚠️ sqlite3 not installed. Skipping export of result.sql.");
+                return;
             }
+
+            exec(`sqlite3 "${dbPath}" .dump > "${exportPath}"`, (error) => {
+                if (error) {
+                    console.error("Failed to export result.sql:", error.message);
+                } else {
+                    console.log("✅ result.sql updated for testing purpose.");
+                }
+            });
         });
 
         return res.status(200).json({ message: 'Results saved and exported' });
