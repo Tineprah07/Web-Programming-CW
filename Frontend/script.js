@@ -141,7 +141,8 @@ resetBtn.addEventListener("click", () => {
     difference = 0;
     isRunning = false;
     timerDisplay.innerHTML = `<span>00</span>:<span>00</span>:<span>00</span>:<span>00</span>`;
-    playPauseBtn.querySelector("i").className = "fas fa-play";
+    playPauseIcon.src = "images/icons8-play-64.png";
+    playPauseIcon.alt = "Play Icon";
 });
 
 
