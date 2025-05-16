@@ -57,7 +57,7 @@ Generative AI (ChatGPT) was used as a tool to accelerate development, troublesho
 
 ### Backend Prompts Used
 
-> “How do I build a REST API using Express and SQLite?”  
+> “How do I build API using Express and SQLite?”  
 Helped structure routes (`/results` GET and POST) and understand best practices for SQLite interactions.
 
 > "What’s the best way to store timestamps for race finish times?"
@@ -108,7 +108,6 @@ Led me to confirm JSON.stringify() and JSON.parse() usage around arrays and obje
 
 ---
 
-
 ## Additional Note on Database Format for Testing
 
 During development, I encountered difficulty debugging the SQLite `.db` file due to its binary format, which is not human-readable. To make testing and verification easier, I introduced an optional export to a `.sql` file. This readable format allowed me to inspect the database structure and race result content during development.
@@ -131,9 +130,9 @@ To enable this optional feature, install the `sqlite3` CLI tool on your server o
 
 ```bash
 sudo apt update && sudo apt install sqlite3 -y
+```
 
-
----
+If `sqlite3` is not present, the application will skip this step gracefully without affecting core functionality.
 
 ## Development Improvements Since Prototype
 
@@ -172,3 +171,5 @@ Working on this project pushed my skills in both frontend and backend developmen
 While AI provided inspiration and assistance during planning and debugging, I made all technical decisions and handled implementation myself. The result is a self-contained, scalable race timing solution that meets all coursework requirements while also being genuinely useful in practical settings.
 
 I’m proud of the balance between simplicity, reliability, and accessibility that I’ve achieved in this final build.
+
+---
