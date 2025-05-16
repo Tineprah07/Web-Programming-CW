@@ -527,6 +527,16 @@ html, body {
   background: #00685a;
 }
 
+/* Icons */
+.icon {
+  width: 1.25em;
+  height: 1.25em;
+  vertical-align: middle;
+  margin-inline-end: 0.1em;
+}
+
+
+
 /* When checked */
 .switch input:checked + .slider {
   background-color: #4caf50;

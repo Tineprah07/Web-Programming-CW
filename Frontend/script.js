@@ -115,16 +115,19 @@ function pauseTimer() {
 // Play/Pause Button
 // ============================
 const playPauseBtn = document.querySelector("#playPause");
+const playPauseIcon = playPauseBtn.querySelector("img");
 playPauseBtn.addEventListener("click", () => {
     isRunning = !isRunning;
     clickSound.play(); // Play sound on button click
     const icon = playPauseBtn.querySelector("i");
     if (isRunning) {
         startTimer();
-        icon.className = "fas fa-pause";
+        playPauseIcon.src = "images/icons8-pause-30.png";
+        playPauseIcon.alt = "Play Icon";
     } else {
         pauseTimer();
-        icon.className = "fas fa-play";
+        playPauseIcon.src = "images/icons8-play-64.png";
+        playPauseIcon.alt = "Pause Icon";
     }
 });
 

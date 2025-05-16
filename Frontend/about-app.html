@@ -16,48 +16,57 @@
   <!-- Navigation Bar -->
   <header>
     <nav class="navbar">
-      <!-- Left: Menu Icon -->
       <section class="menu-container">
-        <button class="menu-icon" id="menu-icon"><i class="fas fa-bars"></i> Menu</button>
+        <button class="menu-icon" id="menu-icon">
+          <img src="images/menu.svg" alt="Menu Icon" class="icon" /> Menu
+        </button>
       </section>
 
-      <!-- Center: Logo -->
       <h1 class="logo"><a href="index.html">Timer</a></h1>
 
-      <!-- Right: Icon -->
-      <span class="icon"><i class="fas fa-clock"></i></span>
+      <aside class="icon">
+        <img src="images/clock-solid.svg" alt="Clock Icon" class="icon" />
+      </aside>
     </nav>
   </header>
+
+  <!-- Offline Mode Notice -->
+  <aside id="offline-status" class="offline-banner">Offline Mode</aside>
+
+  <!-- Toast Message Box -->
+  <aside id="toast" class="toast"></aside>
 
   <!-- Sidebar Menu -->
   <aside class="menu-box" id="menu-box">
     <section class="menu-icon-top">
-      <i class="fas fa-info-circle"></i>
+      <img src="images/icons8-home.svg" alt="Home Icon" class="icon" />
     </section>
 
     <nav>
       <ul>
-        <li><a href="index.html"><i class="far fa-clock"></i> Timer</a></li>
-        <li><a href="result.html"><i class="fas fa-list"></i> Results</a></li>
-        <li><a href="about-app.html"><i class="fas fa-info-circle"></i> About App</a></li>
+        <li><a href="index.html"><img src="images/icons8-clock.svg" alt="Timer Icon" class="icon" /> Timer</a></li>
+        <li><a href="result.html"><img src="images/icons8-list-64.png" alt="Results Icon" class="icon" /> Results</a></li>
+        <li><a href="about-app.html"><img src="images/icons8-about.svg" alt="About Icon" class="icon" /> About App</a></li>
       </ul>
     </nav>
 
-    <main class="menu-section bottom-settings">
-      <header class="menu-heading">
-        <i class="fas fa-cog"></i> 
+    <!-- Settings Section -->
+    <section class="menu-section bottom-settings">
+      <h2 class="menu-heading">
+        <img src="images/icons8-gear-30.png" alt="Settings Icon" class="icon" />
         <span>Settings</span>
-      </header>
+      </h2>
 
-      <section class="theme-toggle">
+      <!-- Night Mode Toggle -->
+      <aside class="theme-toggle">
         <span class="toggle-label">Night Mode</span>
         <label class="switch">
-          <input type="checkbox" id="nightToggle">
+          <input type="checkbox" id="nightToggle"/>
           <span class="slider"></span>
         </label>
-      </section>
-    </main>
+      </aside>
 
+    </section>
   </aside>
 
   <!-- About App Section -->
@@ -65,7 +74,7 @@
     <section class="records-section">
       <header class="records-header">
         <section class="records-title">
-          <i class="fas fa-info-circle"></i>
+          <img src="images/circle-info-solid.svg" alt="About Icon" class="icon" />
           <span>About This App</span>
         </section>
       </header>

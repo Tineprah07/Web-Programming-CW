@@ -7,7 +7,6 @@
   <title>Race Results</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="result.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
 </head>
 <body>
 
@@ -15,41 +14,54 @@
   <header>
     <nav class="navbar">
       <section class="menu-container">
-        <button class="menu-icon" id="menu-icon"><i class="fas fa-bars"></i> Menu</button>
+        <button class="menu-icon" id="menu-icon">
+          <img src="images/menu.svg" alt="Menu Icon" class="icon" /> Menu
+        </button>
       </section>
+
       <h1 class="logo"><a href="index.html">Timer</a></h1>
-      <span class="icon"><i class="fas fa-clock"></i></span>
+
+      <aside class="icon">
+        <img src="images/clock-solid.svg" alt="Clock Icon" class="icon" />
+      </aside>
     </nav>
   </header>
 
   <!-- Offline Mode Notice -->
   <aside id="offline-status" class="offline-banner">Offline Mode</aside>
 
+  <!-- Toast Message Box -->
+  <aside id="toast" class="toast"></aside>
+
   <!-- Sidebar Menu -->
   <aside class="menu-box" id="menu-box">
-    <section class="menu-icon-top"><i class="fas fa-list"></i></section>
+    <section class="menu-icon-top">
+      <img src="images/icons8-home.svg" alt="Home Icon" class="icon" />
+    </section>
 
     <nav>
       <ul>
-        <li><a href="index.html"><i class="far fa-clock"></i> Timer</a></li>
-        <li><a href="result.html"><i class="fas fa-list"></i> Results</a></li>
-        <li><a href="about-app.html"><i class="fas fa-info-circle"></i> About App</a></li>
+        <li><a href="index.html"><img src="images/icons8-clock.svg" alt="Timer Icon" class="icon" /> Timer</a></li>
+        <li><a href="result.html"><img src="images/icons8-list-64.png" alt="Results Icon" class="icon" /> Results</a></li>
+        <li><a href="about-app.html"><img src="images/icons8-about.svg" alt="About Icon" class="icon" /> About App</a></li>
       </ul>
     </nav>
 
+    <!-- Settings Section -->
     <section class="menu-section bottom-settings">
-      <header class="menu-heading">
-        <i class="fas fa-cog"></i> <span>Settings</span>
-      </header>
+      <h2 class="menu-heading">
+        <img src="images/icons8-gear-30.png" alt="Settings Icon" class="icon" />
+        <span>Settings</span>
+      </h2>
 
       <!-- Night Mode Toggle -->
-      <section class="theme-toggle">
+      <aside class="theme-toggle">
         <span class="toggle-label">Night Mode</span>
         <label class="switch">
-          <input type="checkbox" id="nightToggle">
+          <input type="checkbox" id="nightToggle"/>
           <span class="slider"></span>
         </label>
-      </section>
+      </aside>
 
     </section>
   </aside>
@@ -59,7 +71,7 @@
     <section class="records-section">
       <header class="records-header">
         <div class="records-title">
-          <i class="fas fa-list-ol"></i>
+          <img src="images/list-ol-solid.svg" alt="Submitted Results Icon" class="icon" />
           <span>Submitted Race Results</span>
         </div>
       </header>
@@ -78,9 +90,11 @@
 
         <section class="records-controls">
           <button id="downloadCsvBtn" class="icon-btn submit-btn">
-            <i class="fas fa-file-csv"></i> Export CSV
+            <img src="images/icons8-csv-50.png" alt="Export CSV Icon" class="icon" /> Export CSV
           </button>
-          <button id="deleteResultsBtn" class="icon-btn clear-btn"> <i class="fas fa-trash"></i> Delete All </button>
+          <button id="deleteResultsBtn" class="icon-btn clear-btn">
+            <img src="images/icons8-trash.svg" alt="Delete Icon" class="icon" /> Delete All
+          </button>
         </section>
 
       </article>
