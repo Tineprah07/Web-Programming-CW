@@ -132,7 +132,9 @@ To enable this optional feature, install the `sqlite3` CLI tool on your server o
 sudo apt update && sudo apt install sqlite3 -y
 ```
 
-If `sqlite3` is not present, the application will skip this step gracefully without affecting core functionality.
+
+---
+
 
 ## Development Improvements Since Prototype
 
