@@ -43,6 +43,11 @@ Built using only core web technologies—**Node.js with Express, SQLite, JavaScr
 
 **Design Note**: This feature enhances accessibility and provides a professional, polished look suitable for use in real races.
 
+## Additional Considerations
+- Large buttons and bold text for older users with vision limitations.
+- Audio feedback included to help volunteers confirm button presses.
+- Basic CSS used to ensure compliance with the "no frameworks" rule.
+
 
 ---
 
@@ -100,7 +105,33 @@ Led me to confirm JSON.stringify() and JSON.parse() usage around arrays and obje
 2. Run: `npm install`
 3. Run: `npm run setup` to initialize the SQLite database.
 4. Run: `npm start`
-5. Visit `http://localhost:8080` in your browser.
+
+---
+
+
+## Additional Note on Database Format for Testing
+
+During development, I encountered difficulty debugging the SQLite `.db` file due to its binary format, which is not human-readable. To make testing and verification easier, I introduced an optional export to a `.sql` file. This readable format allowed me to inspect the database structure and race result content during development.
+
+Although this `.sql` export is not part of the running application’s core functionality, I chose to keep it in the codebase strictly for future testing and debugging purposes. The application does not rely on it, and all key functionality runs entirely on the standard SQLite `.db` file, fully in line with coursework requirements.
+
+### Optional SQL Export Feature
+
+This feature exports data from `results.db` into a human-readable file called `results.sql` using the `sqlite3` command-line tool. It is intended for:
+
+- Manual inspection of race results
+- Verifying data integrity
+- Debugging during development
+
+If the `sqlite3` tool is not installed on the system, the export is silently skipped without affecting the app’s performance or correctness.
+
+### How to Enable SQL Export
+
+To enable this optional feature, install the `sqlite3` CLI tool on your server or development environment:
+
+```bash
+sudo apt update && sudo apt install sqlite3 -y
+
 
 ---
 

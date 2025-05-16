@@ -38,7 +38,7 @@ app.post('/results', async (req, res) => {
         // This export is used during development to view DB contents outside of SQLite
         exec(`which sqlite3`, (whichErr) => {
             if (whichErr) {
-                console.warn("⚠️ sqlite3 not installed. Skipping export of result.sql.");
+                console.warn("For Testing Purpose: sqlite3 not installed. Skipping export of result.sql.");
                 return;
             }
 
